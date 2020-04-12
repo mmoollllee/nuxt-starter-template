@@ -1,0 +1,56 @@
+@font-face {
+font-family: "{{ fontName }}";
+src: {{{ src }}};
+font-display: swap;
+}
+
+%icon-font-stuff {
+font-family: {{ fontName }} !important;
+font-style: normal !important;
+font-weight: normal !important;
+font-variant: normal !important;
+text-transform: none !important;
+speak: none;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+position: relative;
+line-height: inherit;
+}
+
+@mixin icon($content) {
+content: $content;
+@extend %icon-font-stuff;
+}
+
+[data-icon]:before {
+@extend %icon-font-stuff;
+content: attr(data-icon);
+}
+
+[data-icon-right]:after {
+@extend %icon-font-stuff;
+content: attr(data-icon-right);
+}
+
+[data-icon-left]:before {
+@extend %icon-font-stuff;
+content: attr(data-icon-left);
+}
+
+{{# if baseSelector }}
+{{ baseSelector }}:before {
+{{ else }}
+[class^="{{classPrefix}}"]:before, [class*=" {{classPrefix}}"]:before {
+{{/ if }}
+@extend %icon-font-stuff;
+}
+
+{{# each codepoints }}
+{{# if ../baseSelector }}
+{{ ../baseSelector }}.{{ ../classPrefix }}{{ @key }}:before {
+{{ else }}
+{{ baseTag }}.{{ ../classPrefix }}{{ @key }}:before {
+{{/ if }}
+content: "\\{{ this }}";
+}
+{{/ each }}

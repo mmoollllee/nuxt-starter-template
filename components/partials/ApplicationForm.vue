@@ -1,0 +1,336 @@
+<template>
+  <form class="form">
+    <div
+      :class="form.status"
+      v-if="form.statusMessage"
+      class="col-12 status-message"
+    >
+      {{ form.statusMessage }}
+    </div>
+    <label
+      :class="{ 'form-group--error': $v.form.name.$error }"
+      class="col-12 col-s-6 col-l-5"
+    >
+      <span class="label">Last Name</span>
+      <input
+        v-model.trim="form.name"
+        @input="$v.form.name.$touch()"
+        type="text"
+        placeholder="Last Name"
+        name="name"
+        required="required"
+      />
+      <div v-if="!$v.form.name.required && form.showErrors" class="error">
+        This field is required.
+      </div>
+    </label>
+
+    <label
+      :class="{ 'form-group--error': $v.form.name.$error }"
+      class="col-12 col-s-6 col-l-5"
+    >
+      <span class="label">First Name</span>
+      <input
+        v-model.trim="form.firstName"
+        @input="$v.form.firstName.$touch()"
+        type="text"
+        placeholder="First Name"
+        name="firstName"
+        required="required"
+      />
+      <div v-if="!$v.form.firstName.required && form.showErrors" class="error">
+        This field is required.
+      </div>
+    </label>
+
+    <label
+      :class="{ 'form-group--error': $v.form.phone.$error }"
+      class="col-12 col-s-6 col-l-5"
+    >
+      <span class="label">Phone </span>
+      <input
+        v-model.trim="form.phone"
+        @input="$v.form.phone.$touch()"
+        type="text"
+        placeholder="Phone (Mobile)"
+        name="phone"
+        required="required"
+      />
+    </label>
+
+    <label
+      :class="{ 'form-group--error': $v.form.mail.$error }"
+      class="col-12 col-s-6 col-l-5"
+    >
+      <span class="label">Email Adress</span>
+      <input
+        v-model.trim="form.mail"
+        @input="$v.form.mail.$touch()"
+        type="email"
+        placeholder="Email Adress"
+        name="mail"
+      />
+      <div v-if="!$v.form.mail.email && form.showErrors" class="error">
+        This email address does not seem to be valid?
+      </div>
+    </label>
+
+    <div class="col-12 py-2">
+      <span class="label font-weight-bold">{{ title }}</span>
+      <ul class="list-unstyled row col-12">
+        <li
+          v-for="(job, jobIndex) in jobs"
+          :key="jobIndex"
+          class="custom-control custom-switch col-auto job"
+        >
+          <input
+            v-model="form.application"
+            :id="job"
+            :value="job"
+            :checked="type == job"
+            type="checkbox"
+            class="custom-control-input"
+          />
+          <label :for="job" class="custom-control-label">
+            {{ job }}
+          </label>
+        </li>
+      </ul>
+    </div>
+
+    <label id="subject" class="col-12">
+      <span class="label">subject</span>
+      <input
+        v-model.trim="form.subject"
+        @input="$v.form.subject.$touch()"
+        type="text"
+        placeholder="subject"
+        name="subject"
+        required="required"
+      />
+    </label>
+    <div v-if="!$v.form.subject.mustBeEmpty && form.showErrors" class="col-12">
+      <div class="error">
+        Please leave this field empty.
+      </div>
+    </div>
+
+    <label class="col-12 col-l-11">
+      <span class="label">Your message</span>
+      <textarea
+        v-model.trim="form.message"
+        @input="
+          $v.form.message.$touch()
+          autoGrow($event)
+        "
+        type="text"
+        placeholder="Tell us something about you"
+        name="message"
+        required="required"
+      />
+      <div v-if="!$v.form.message.required && form.showErrors" class="error">
+        Bitte erzähle uns etwas von dir
+      </div>
+    </label>
+    <div
+      :class="!$v.form.message.required && form.showErrors ? 'pb-4' : ''"
+      class="col-12 col-l-11 tt-100 text-right"
+    >
+      <button
+        @click.prevent="clearForm"
+        v-if="form.status === 'success'"
+        @mouseover="messageSentCaption = 'Set back form to empty'"
+        @mouseleave="messageSentCaption = 'application sent'"
+        type="submit"
+        class="button success"
+        data-icon-right="f"
+      >
+        {{ messageSentCaption }}
+      </button>
+      <button
+        @click.prevent="submitForm"
+        v-else
+        type="submit"
+        class="button"
+        data-icon-right="c"
+      >
+        application senden
+      </button>
+      <label>
+        <input
+          v-model.trim="form.privacy"
+          @input="$v.form.privacy.$touch()"
+          type="checkbox"
+          name="privacy"
+        />
+        <span class="label"
+          >Consent to the use of data in accordance with
+          <a
+            href="/privacy/"
+            data-fancybox=""
+            data-type="ajax"
+            data-src="/privacy/"
+            data-filter="#content"
+            >the privacy policy</a
+          ></span
+        >
+        <div
+          v-if="!$v.form.privacy.mustBeTrue && form.showErrors"
+          class="error"
+        >
+          To use the form, you must accept this.
+        </div>
+      </label>
+    </div>
+  </form>
+</template>
+
+<style lang="scss" scoped>
+#subject {
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
+textarea {
+  min-height: 200px;
+  padding-bottom: 80px;
+  height: auto;
+}
+
+.tt-100 {
+  transform: translateY(calc(-100% - 10px));
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.job {
+  min-width: 310px;
+  max-width: 350px;
+  width: 100%;
+}
+</style>
+
+<script type="text/javascript">
+import axios from 'axios'
+import { required, email } from 'vuelidate/lib/validators'
+
+const mustBeEmpty = (value) => value.length === 0
+const mustBeTrue = (value) => value === true || value === 1
+
+export default {
+  props: {
+    type: {
+      type: String,
+      default: ''
+    },
+    title: {
+      type: String,
+      default: 'For which job are you applying?'
+    },
+    jobs: {
+      type: Array,
+      default: () => ['Office Work m/f/d', 'Photography Work m/f/d']
+    }
+  },
+  data() {
+    return {
+      form: {
+        name: '',
+        firstName: '',
+        phone: '',
+        mail: '',
+        application: this.type ? [this.type] : [''],
+        subject: '',
+        message: '',
+        privacy: false,
+        showErrors: false,
+        statusMessage: '',
+        status: '',
+        messageSentCaption: 'application sent'
+      }
+    }
+  },
+  validations: {
+    form: {
+      name: {
+        required
+      },
+      firstName: {
+        required
+      },
+      mail: {
+        email
+      },
+      phone: {
+        required
+      },
+      application: {},
+      subject: {
+        mustBeEmpty
+      },
+      message: {
+        required
+      },
+      privacy: {
+        mustBeTrue
+      }
+    }
+  },
+  methods: {
+    autoGrow(event) {
+      const el = event.target
+      setTimeout(function() {
+        el.style.cssText = 'height:auto; padding:0'
+        el.style.cssText = 'height:' + (el.scrollHeight + 10) + 'px'
+      }, 0)
+    },
+    submitForm() {
+      if (this.$v.form.$invalid) {
+        this.form.showErrors = true
+        return
+      }
+      this.form.showErrors = false
+      const contactFormData = new FormData()
+      contactFormData.set('name', this.form.name)
+      contactFormData.set('firstName', this.form.firstName)
+      contactFormData.set('mail', this.form.mail)
+      contactFormData.set('phone', this.form.phone)
+      contactFormData.set('application', this.form.application)
+      contactFormData.set('subject', this.form.subject)
+      contactFormData.set('message', this.form.message)
+
+      axios({
+        method: 'post',
+        url: '/mailer.php',
+        data: contactFormData
+      })
+        .then((response) => {
+          // Handle success.
+          this.form.status = 'success'
+          this.form.statusMessage =
+            'Application successfully sent. Thanks a lot! We will contact you as soon as possible.'
+        })
+        .catch((response) => {
+          this.form.status = 'error'
+          this.form.statusMessage =
+            'An error has occurred. Please try again or apply by other means.'
+        })
+    },
+    clearForm() {
+      this.form = {
+        name: '',
+        firstName: '',
+        mail: '',
+        phone: '',
+        subject: '',
+        message: '',
+        privacy: false,
+        showErrors: false
+      }
+    }
+  }
+}
+</script>

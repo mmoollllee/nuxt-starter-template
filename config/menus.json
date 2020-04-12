@@ -1,0 +1,33 @@
+{
+  "menuMain": [
+    {
+      "text": "Home",
+      "path": "/"
+    },
+    {
+      "text": "Jobs",
+      "path": "/jobs/"
+    },
+    {
+      "text": "contact",
+      "path": "/contact/"
+    }
+  ],
+  "menuFooter": [
+    {
+      "text": "Imprint",
+      "path": "/imprint"
+    },
+    {
+      "text": "Privacy",
+      "path": "/privacy"
+    }
+  ],
+  "menuSocial": {
+    "facebook": {
+      "text": "Visit Company on Facebook",
+      "icon": "facebook-square",
+      "path": "https://www.facebook.com/examplecompany/"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "cookieGroups": {
+    "necessary": {
+      "text": "Required",
+      "long_name": "Required Cookies",
+      "description": "Ensures the functionality of the website.",
+      "checked": true,
+      "disabled": true
+    },
+    "analytics": {
+      "text": "Analysis",
+      "long_name": "Other services & cookies",
+      "description": "Allow the website operator to evaluate and improve its offer.",
+      "cookies": {
+        "ga": {
+          "text": "Google Analytics",
+          "description": "UA x1234, IP Anonymization"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+// [data-icon]:before,
+// [data-icon-right]:after,
+// [data-icon-left]:before,
+// [class^='icon-']:before,
+// [class*=' icon-']:before {
+//   bottom: -0.12em;
+// }
+
+[data-icon-left="f"]:before,
+[data-icon-right="f"]:after,
+.icon-check:before,
+.iconafter-check:after,
+[data-icon-left="n"]:before,
+[data-icon-right="n"]:after,
+.icon-sliders-h:before,
+.iconafter-sliders-h:after,
+[data-icon-left="m"]:before,
+[data-icon-right="m"]:after,
+.icon-times:before,
+.iconafter-times:after,
+[data-icon-left="b"]:before,
+[data-icon-right="b"]:after,
+.icon-angle-left:before,
+.iconafter-angle-left:after,
+[data-icon-left="c"]:before,
+[data-icon-right="c"]:after,
+.icon-angle-right:before,
+.iconafter-angle-right:after,
+[data-icon-left="l"]:before,
+[data-icon-right="l"]:after,
+.icon-phone:before,
+.iconafter-phone:after,
+[data-icon-left="h"]:before,
+[data-icon-right="h"]:after,
+.icon-envelope:before,
+.iconafter-envelope:after,
+[data-icon-left="j"]:before,
+[data-icon-right="j"]:after,
+.icon-fax:before,
+.iconafter-fax:after
+ {
+  bottom: -0.12em;
+}

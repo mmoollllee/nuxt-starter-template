@@ -1,0 +1,179 @@
+@import '_bootstrap';
+
+@import 'swiper/swiper.scss';
+
+@import '_nuxt';
+@import '_icons';
+@import '_transitions';
+
+@import '_grid';
+
+@import '_font';
+@import '_buttons';
+@import '_forms';
+
+@import '_fixes';
+
+
+// --------------------------
+// Layout Elements
+// --------------------------
+
+.space-top {
+  margin-top: 1rem !important;
+
+  @include media-breakpoint-up(m) {
+    margin-top: 2rem !important
+  }
+}
+
+.space-y {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+
+  @include media-breakpoint-up(m) {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important
+  }
+}
+
+h1.title {
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+  @include media-breakpoint-up(s) {
+    padding-left: 1em;
+  }
+  @include media-breakpoint-up(m) {
+    margin-bottom: 2rem;
+  }
+}
+
+.splash {
+  overflow: hidden;
+  position: relative;
+	z-index: -1;
+
+  @include media-breakpoint-up(l) {
+    margin-top: -3rem;
+  }
+  > * {
+    object-fit: cover;
+    height: 100%;
+    max-height: 60vh;
+    max-width: 100%;
+
+    @media (min-height: 1000px) {
+      max-height: 500px;
+    }
+  }
+  img {
+    max-height: 500px;
+  }
+  & + h1.title {
+    margin-top: -2em;
+    @include media-breakpoint-up(m) {
+      margin-top: -10rem;
+      margin-bottom: 2rem;
+    }
+  }
+  video {
+    width: 100%;
+  }
+}
+
+.card {
+  background: #fff;
+  padding: 1em;
+  margin-bottom: auto;
+
+  [class*="col-"] {
+    &:not(:first-of-type) {
+      h2 {
+        margin-top: 2rem
+      }
+      h3 {
+        margin-top: 1.5rem
+      }
+      h4 {
+        margin-top: 1rem
+      }
+    }
+  }
+
+  @include media-breakpoint-up(m) {
+    padding:2rem
+  }
+}
+
+figure + .card {
+  margin-top: -1rem
+}
+
+@include media-breakpoint-up(m) {
+  .grid-m {
+    display: grid;
+    grid-template-columns: 1fr 270px;
+    grid-gap: 15px;
+    @include media-breakpoint-up(xl) {
+      grid-template-columns: 1fr 300px;
+    }
+  }
+}
+
+.info-box {
+  width: auto;
+
+  .h3 {
+    color: var(--primary);
+    font-size: 1.3em;
+    margin-bottom: 0;
+    padding: 0 0.5rem;
+  }
+  .bg-gray {
+    color: #fff;
+    padding: 0.5rem;
+  }
+}
+
+// --------------------------
+// Buttons & Fonts
+// --------------------------
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  &.button, .button {
+    font-weight: inherit;
+    line-height: inherit;
+    padding-bottom: inherit;
+    margin: inherit;
+    margin-top: 0;
+    --padding-x: .75em;
+  }
+}
+
+a:hover {
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+    &.bg-white, .bg-white {
+      color: var(--primary-light);
+    }
+    &.button, .button {
+      --backgroundcolor: var(--primary-gray-dark);
+      color: #fff;
+      background-position: 0;
+      &:after {
+        color: inherit;
+      }
+    }
+  }
+}
+
+
+// -----------------------
+// Fancybox
+// -----------------------
+
+.fancybox-content {
+  .row {
+    max-width: 960px;
+  }
+}

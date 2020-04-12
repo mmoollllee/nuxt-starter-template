@@ -1,0 +1,18 @@
+$transition-duration: 0.2s;
+
+// Transition Everything always
+#app *,
+#app *:after,
+#app *:before {
+  transition: all $transition-duration;
+}
+
+// Default Nuxt Page Transitions https://nuxtjs.org/guide/routing#transitions
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.1s;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}

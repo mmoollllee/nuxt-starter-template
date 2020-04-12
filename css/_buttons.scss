@@ -1,0 +1,100 @@
+// Reset buttons to normal links
+button {
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  border: 0 none;
+  padding: 0 .3rem;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    color: var(--primary)
+  }
+}
+
+.button {
+  --backgroundcolor: var(--primary-gray);
+  color: #fff;
+  font-family: var(--headings-font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  --padding-x: .75rem;
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+  line-height: 1.7;
+  padding-bottom: 0.1em;
+  margin: 0.3em .5em;
+  display: inline-block;
+  white-space: nowrap;
+
+  &.bold {
+    font-weight: 800;
+  }
+
+  &[data-icon-right] {
+    background: #fff;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, var(--backgroundcolor) 100%, #fff 99.9%);
+    background-position-x: -2em;
+
+    &:after {
+      color: #000;
+      display: inline-block;
+      min-width: 2em;
+      display: inline-block;
+      text-align: center;
+      padding-left: var(--padding-x);
+      transform: translateX(.3em);
+    }
+  }
+
+  &[data-icon-left] {
+    background: #fff;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to right, #fff 0%, var(--backgroundcolor) 0.1%);
+    background-position-x: 2em;
+
+    &:before {
+      color: #000;
+      display: inline-block;
+      min-width: 2em;
+      display: inline-block;
+      text-align: center;
+      padding-right: var(--padding-x);
+      transform: translateX(-.3em);
+    }
+  }
+
+
+  &:hover, &:focus {
+    --backgroundcolor: var(--primary-gray-dark);
+    color: #fff;
+    background-position: 0;
+    text-decoration: none;
+    &:after, &:before {
+      color: inherit;
+    }
+  }
+
+
+
+  &.secondary {
+    background: var(--primary-gray-light);
+    color: #000;
+    text-transform: none;
+    font-weight: 500;
+    &:after, &:before {
+      color: inherit;
+      font-size: .9em;
+    }
+
+    &:hover, &:focus {
+      color: var(--primary-gray-dark);
+      background: var(--primary-gray-lighter);
+    }
+  }
+
+  & + p {
+    margin-top: 1rem;
+  }
+}

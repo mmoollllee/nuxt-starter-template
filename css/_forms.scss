@@ -1,0 +1,167 @@
+$input-initial:	#888;
+$input-initial-border:	#bbb;
+$input-value:	#F9F9F9;
+$input-margin: .6rem 0 0 0;
+
+input:not([type="checkbox"]),
+textarea,
+select,
+.multiselect__tags {
+	display: block;
+	border: 1px solid #bdc1cc;
+	font-size: 1rem;
+	line-height: 1.4;
+	width: 100%;
+	height: 2.5rem;
+	padding: 0.5rem;
+	color: #616161;
+	border-radius: 2px;
+	box-shadow: none;
+	-webkit-appearance: none;
+	outline: none !important;
+	margin: $input-margin;
+
+	&:placeholder-shown {
+		border-color: $input-initial-border
+	}
+
+	&:not(:required) {
+		background: #f7f7f7;
+	}
+
+	&[aria-required="true"] {
+		background: #fff !important;
+	}
+
+	&:focus {
+		-moz-box-shadow: 0px 1px 10px #eeeeee; -webkit-box-shadow: 0px 1px 10px #eeeeee; box-shadow: 0px 1px 10px #eeeeee
+	}
+
+	&:focus, &:not(:placeholder-shown) {
+		opacity: 1; border-color: $input-initial;
+	}
+}
+
+.multiselect {
+
+	.multiselect__tags {
+		padding-bottom: 0;
+		min-height: 2.5rem;
+		height: auto;
+
+		.multiselect__placeholder {
+			font-size: inherit;
+			margin-bottom: 0;
+			padding-top: 0;
+		}
+
+		.multiselect__tags-wrap {
+			padding: 0.5rem;
+			padding-left: 0;
+
+			.multiselect__tag {
+				margin-bottom: 1px;
+			}
+		}
+
+		.multiselect__input {
+			position: absolute;
+			top: 1px;
+			border: 0 none;
+			box-shadow: none;
+			margin: 0;
+			height: 2.4rem;
+			left: 1px;
+			max-width: calc(100% - 2px);
+			transition: none !important;
+		}
+	}
+
+	.multiselect__option--selected {
+		background: inherit !important;
+		color: inherit !important;
+	}
+
+	.multiselect__option--highlight {
+		background:#f3f3f3;
+		color:#35495e;
+		&::after {
+			background: inherit;
+			color: inherit;
+		}
+		&.multiselect__option--selected {
+			background:#f3f3f3 !important;
+			color:#35495e !important;
+		}
+	}
+}
+
+// select {
+// 	padding: 0 2rem 0 1rem;
+// 	-moz-appearance: none;
+//   -webkit-appearance: none;
+// 	appearance: none;
+// 	overflow: hidden;
+// 	&:focus {
+// 		overflow: visible;
+// 	}
+// 	option {
+// 		height: 2.5rem
+		
+// 	}
+// }
+
+input[type="checkbox"] {
+	margin: $input-margin;
+	margin-right: .5rem;
+
+	& + .label {
+		font-size: 1rem;
+		margin: $input-margin;
+	}
+}
+
+textarea { min-height: 200px }
+
+[aria-invalid="true"] {border-color: $red !important; border-style: dashed !important;}
+
+.status-message {
+  padding: 5px 8px;
+  &:empty {
+    display: none;
+	}
+	&.error {
+		border: 1px dashed red;
+	}
+	&.success {
+		border: 1px dashed green;
+	}
+}
+
+//Hide Labels
+.form label:not(.browser-style):not(.custom-control-label) {
+	font-size: 0;
+}
+
+label .error {
+	color: var(--primary-gray);
+	font-size: 0.9rem !important;
+  padding-left: 0.5rem;
+}
+
+label {
+	margin: 0;
+	width: 100%
+}
+
+.form {
+	display: flex;
+	flex-flow: row wrap;
+
+	> * {
+		position: relative;
+		min-height: 1px;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}

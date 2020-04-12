@@ -1,0 +1,79 @@
+// ---------------------------
+// Sass Options: https://getbootstrap.com/docs/4.0/getting-started/theming/#sass-options
+// ---------------------------
+$enable-rounded: false; // default true
+$enable-responsive-font-sizes: true; // default false
+$enable-caret: false; // default true
+$enable-validation-icons: false; // default true
+$enable-deprecation-messages: false; // default true
+
+
+// ---------------------------
+// Colors
+// ---------------------------
+$primary: #d11c45;
+$primary-dark: darken($primary, 10%);
+$primary-light: lighten($primary, 10%);
+$primary-gray: #979494;
+$primary-gray-dark: darken($primary-gray, 10%);
+$primary-gray-light: lighten($primary-gray, 20%);
+$primary-gray-lighter: lighten($primary-gray, 30%);
+$primary-shadow: darken($primary, 90%);
+$body-bg: #E40039;
+// $body-color: $gray-900;
+
+:root {
+  --body-bg: #{$body-bg};
+  --primary-shadow: #{$primary-shadow};
+  --primary-dark: #{$primary-dark};
+  --primary-light: #{$primary-light};
+  --primary-gray: #{$primary-gray};
+  --primary-gray-dark: #{$primary-gray-dark};
+  --primary-gray-light: #{$primary-gray-light};
+  --primary-gray-lighter: #{$primary-gray-lighter};
+}
+
+
+// ---------------------------
+// Links
+// ---------------------------
+
+// $link-color: theme-color('primary');
+// $link-decoration: none;
+// $link-hover-color: darken($link-color, 15%);
+// $link-hover-decoration: underline;
+
+
+// ---------------------------
+// Spacing & Sizes
+// ---------------------------
+$spacer: 1rem; // default 1rem
+// $paragraph-margin-bottom: 1rem;
+
+$grid-breakpoints: (
+  xxs: 0,
+  xs: 480px,
+  s: 576px,
+  sm: 640px,
+  m: 768px,
+  l: 992px,
+  xl: 1150px,
+  xxl: 1300px
+);
+
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1140px
+// );
+
+:root {
+  --spacer: #{$spacer};
+}
+
+
+// Bootstrap Functional Imports
+@import "bootstrap/scss/_functions.scss";
+@import "bootstrap/scss/_variables.scss";
+@import "bootstrap/scss/_mixins.scss";

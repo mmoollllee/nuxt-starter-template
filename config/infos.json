@@ -1,0 +1,11 @@
+{
+  "contact": {
+    "company": "Company GmbH",
+    "street": "Examplestreet 15",
+    "postcode": "1234",
+    "city": "City",
+    "phone": "01234 12 34 56",
+    "fax": "01234 12 34 56",
+    "mail": "info@example.com"
+  }
+}
