@@ -9,8 +9,11 @@
         muted
         title="video of your company"
       >
-        <source src="/video/forest.mp4" type="video/mp4" />
-        <source src="/video/forest.webm" type="video/webm" />
+        <source :src="require('~/assets/video/forest.mp4')" type="video/mp4" />
+        <source
+          :src="require('~/assets/video/forest.webm')"
+          type="video/webm"
+        />
       </video>
     </div>
     <h1 class="container title">
