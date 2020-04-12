@@ -69,8 +69,10 @@ npm run icons
 
 
 ## ToDo
-- Remove Hammer.js?
 - Replace Fancybox with https://fancyapps.com/next/ and drop jQuery
-- Cookie Message as extra component
-- Remove Swiper?
-- Remove Vue Bootstrap?
+- Cookie Message as extra component: [https://github.com/mmoollllee/nuxt-privacy-message-example](Work in progress. Help wanted!)
+
+# Credits
+Thanks to [GigaHierz](https://github.com/GigaHierz) for helping prepare this repo and her feedback!
+Thanks to [HF Media](https://hfmedia.de/) for the stunning placeholder video
+Thanks to [myself](https://github.com/mmoollllee) for the placeholder images
