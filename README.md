@@ -86,7 +86,7 @@ npm run icons
 
 ## ToDo
 - Replace Fancybox with https://fancyapps.com/next/ and drop jQuery
-- Cookie Message as extra component: [https://github.com/mmoollllee/nuxt-privacy-message-example](Work in progress. Help wanted!)
+- Cookie Message as extra component: [Work in progress. Help wanted!](https://github.com/mmoollllee/nuxt-privacy-message-example)
 
 # Credits
 Thanks to [GigaHierz](https://github.com/GigaHierz) for helping prepare this repo and her feedback!
