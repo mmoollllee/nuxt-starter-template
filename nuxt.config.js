@@ -10,7 +10,7 @@ const description = ''
 // localhost or domain for production
 const hostname =
   process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? 'https://mmoollllee.github.io/nuxt-starter-template/'
+    ? 'https://mmoollllee.github.io'
     : process.env.BASE_URL || 'https://example.com'
 
 // only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
