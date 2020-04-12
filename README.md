@@ -2,6 +2,8 @@
 
 > NUXT Template for static site generated marketing website
 
+[**Demo**](https://mmoollllee.github.io/nuxt-starter-template/)
+
 ## Build Setup
 
 ``` bash
