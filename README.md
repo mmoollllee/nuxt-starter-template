@@ -15,6 +15,7 @@
 - Responsive Slideout Menu
 - Good Lighthouse Audit ( Performance __90+__, Accessibility __100__, Best Practices __100__, SEO __100__)
 - [Opt-In Cookie Banner](https://github.com/mmoollllee/nuxt-privacy-message)
+- Modal Windows with route change
 
 [**Demo**](https://mmoollllee.github.io/nuxt-starter-template/)
 
