@@ -10,7 +10,18 @@ const description = ''
 // localhost or domain for production
 const hostname = process.env.BASE_URL || 'https://example.com'
 
+// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/nuxt-starter-template/'
+        }
+      }
+    : {}
+
 export default {
+  ...routerBase,
   mode: 'universal',
   head: {
     htmlAttrs: {

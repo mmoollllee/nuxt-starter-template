@@ -10,7 +10,8 @@
     "start": "nuxt start --modern=client",
     "generate": "nuxt generate --modern=client",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "icons": "icon-font-generator assets/icons/*.svg --codepoints config/codepoints.json --normalize --center -o static/fonts  --name icon-font --csstp helpers/icon-font-template.hbs --csspath css/_icons.scss --jsonpath helpers/icons.json --html false --fontspath /fonts/ --height 1000"
+    "icons": "icon-font-generator assets/icons/*.svg --codepoints config/codepoints.json --normalize --center -o static/fonts  --name icon-font --csstp helpers/icon-font-template.hbs --csspath css/_icons.scss --jsonpath helpers/icons.json --html false --fontspath /fonts/ --height 1000",
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
   },
   "dependencies": {
     "@bazzite/nuxt-optimized-images": "^0.3.0",
