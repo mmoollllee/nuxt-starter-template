@@ -2,6 +2,20 @@
 
 > NUXT Template for static site generated marketing website
 
+- Responsive Images via [NUXT Optimized Images](https://github.com/aceforth/nuxt-optimized-images)
+- [Fancyapps Fancybox](https://github.com/fancyapps/fancybox) Gallery (Check [Fancybox Licences](https://fancyapps.com/fancybox/3/#license) if you want to use this commercialy)
+- [Manifest](https://www.npmjs.com/package/@nuxtjs/manifest) & [Favicon Icon Generation](https://github.com/pimlie/nuxt-rfg-icon)
+- [Automatic Sitemap Generation](https://github.com/nuxt-community/sitemap-module)
+- [Bootstrap](https://github.com/twbs/bootstrap)
+- [Countup.js](https://github.com/inorganik/countUp.js)
+- [Icon Font Generator](https://github.com/Hammie/icon-font-generator)
+- [Mail Spam Protection](https://github.com/mmoollllee/nuxt-protected-mailto)
+- PHP Contact Form
+- [PurgeCSS](https://github.com/Developmint/nuxt-purgecss)
+- Responsive Slideout Menu
+- Good Lighthouse Audit ( Performance __90+__, Accessibility __100__, Best Practices __100__, SEO __100__)
+- [Opt-In Cookie Banner](https://github.com/mmoollllee/nuxt-privacy-message)
+
 [**Demo**](https://mmoollllee.github.io/nuxt-starter-template/)
 
 ## Build Setup
@@ -25,7 +39,7 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## Configuration
 
-This template is packed with some tools for a faster workflow.
+This template is already packed with some tools.
 
 ### General
 - `nuxt.config.js`
@@ -76,5 +90,7 @@ npm run icons
 
 # Credits
 Thanks to [GigaHierz](https://github.com/GigaHierz) for helping prepare this repo and her feedback!
-Thanks to [HF Media](https://hfmedia.de/) for the stunning placeholder video
-Thanks to [myself](https://github.com/mmoollllee) for the placeholder images
+
+Thanks to [HF Media](https://hfmedia.de/) for the stunning placeholder video.
+
+Thanks to [myself](https://github.com/mmoollllee) for the placeholder images.
