@@ -34,8 +34,6 @@
     "nuxt-start": "^2.11.0",
     "nuxt-svgicon": "^1.2.7",
     "nuxt-vuex-localstorage": "^1.2.6",
-    "swiper": "^5.3.0",
-    "vue2-hammer": "^2.1.2",
     "vuelidate": "^0.7.5",
     "webpack-cli": "^3.3.10"
   },
