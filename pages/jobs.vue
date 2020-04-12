@@ -38,6 +38,7 @@
           >Application</nuxt-link
         >
       </aside>
+      <NuxtChild />
     </div>
   </main>
 </template>

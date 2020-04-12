@@ -124,12 +124,12 @@
           autoGrow($event)
         "
         type="text"
-        placeholder="Tell us something about you"
+        placeholder="About you"
         name="message"
         required="required"
       />
       <div v-if="!$v.form.message.required && form.showErrors" class="error">
-        Bitte erzähle uns etwas von dir
+        Please tell us something about you
       </div>
     </label>
     <div
@@ -139,7 +139,7 @@
       <button
         @click.prevent="clearForm"
         v-if="form.status === 'success'"
-        @mouseover="messageSentCaption = 'Set back form to empty'"
+        @mouseover="messageSentCaption = 'Reset form'"
         @mouseleave="messageSentCaption = 'application sent'"
         type="submit"
         class="button success"
@@ -154,7 +154,7 @@
         class="button"
         data-icon-right="c"
       >
-        application senden
+        send
       </button>
       <label>
         <input
