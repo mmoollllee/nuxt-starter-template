@@ -2,6 +2,7 @@
 
 > NUXT Template for static site generated marketing website
 
+## Features & Ready set up Built in
 - Responsive Images via [NUXT Optimized Images](https://github.com/aceforth/nuxt-optimized-images)
 - [Fancyapps Fancybox](https://github.com/fancyapps/fancybox) Gallery (Check [Fancybox Licences](https://fancyapps.com/fancybox/3/#license) if you want to use this commercialy)
 - [Manifest](https://www.npmjs.com/package/@nuxtjs/manifest) & [Favicon Icon Generation](https://github.com/pimlie/nuxt-rfg-icon)
@@ -40,8 +41,6 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## Configuration
 
-This template is already packed with some tools.
-
 ### General
 - `nuxt.config.js`
 - `config/infos.json` for contact information that will be used in different places site-wide
@@ -52,23 +51,22 @@ This template is already packed with some tools.
 
 ### Webfonts
 - Add preconnect URL for external Webfonts to `nuxt.config.js` in `head.link`
-- Use [local-webfont](https://github.com/swissspidy/local-webfont) to download webfonts css and add `display: swap` to css file (see: `css/_font.scss`)
 - Add Custom Families to `nuxt.config.js` in `webfontloader` (see: [nuxt-webfontloader](https://github.com/Developmint/nuxt-webfontloader))
+- Optional: Use [local-webfont](https://github.com/swissspidy/local-webfont) to download webfonts css and add `display: swap` to css file (see: `css/_font.scss`)
 
 ### Favicon & Manifest
 - Replace `static/favicon.svg`
-- Change `config/faviconDescription.json` or [generate new one](https://github.com/pimlie/nuxt-rfg-icon#rfg)
-- `favicon.ico` will be generated through `nuxt-rfg`
+- Change `config/faviconDescription.json` or generate new one for [nuxt-rfg-icon](https://github.com/pimlie/nuxt-rfg-icon#rfg)
+- `favicon.ico` will be generated through `nuxt-rfg-icon`
 
 ### Sitemap
 - Change settings in `nuxt.config.js`
 - Use `sitemap.routes` to overwrite priorities or add more URLs
 
 ### Contact Form
-- Change Message Body and email address' in `static/mailer.php`
+- Change Message Body, Field names and email address in `static/mailer.php`
 
 ### [Icon-font-generator](https://github.com/Hammie/icon-font-generator)
-
 - Generates Icon Font from `assets/icons/*.svg` to `static/fonts/icon-font.*`.
 - Uses `config/codepoints.json` to map unicode characters for the font.
 - Generates CSS Classes for different icons to `css/_icons.scss` from template placed in `helpers/icon-font-template.hbs`
@@ -83,7 +81,6 @@ npm run icons
 - Every key in `cookieGroups` in `config/cookieMessage.json` will be a group of services in the message. See the example to create new groups.
 - Use the store service to execute code when something is enabled.
 - see `privacy.vue` for related privacy informations
-
 
 ## ToDo
 - Replace Fancybox with https://fancyapps.com/next/ and drop jQuery
