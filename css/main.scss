@@ -130,10 +130,49 @@ figure + .card {
 }
 
 .info-box {
-  border-radius: 1rem;
-  padding: 1em 1em 0 !important;
-  margin: 1em !important;
-  font-weight: bold;
+  width: auto;
+
+  .h3 {
+    color: var(--primary);
+    font-size: 1.3em;
+    margin-bottom: 0;
+    padding: 0 0.5rem;
+  }
+  .bg-gray {
+    color: #fff;
+    padding: 0.5rem;
+  }
+}
+
+// --------------------------
+// Buttons & Fonts
+// --------------------------
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+  &.button, .button {
+    font-weight: inherit;
+    line-height: inherit;
+    padding-bottom: inherit;
+    margin: inherit;
+    margin-top: 0;
+    --padding-x: .75em;
+  }
+}
+
+a:hover {
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+    &.bg-white, .bg-white {
+      color: var(--primary-light);
+    }
+    &.button, .button {
+      --backgroundcolor: var(--primary-gray-dark);
+      color: #fff;
+      background-position: 0;
+      &:after {
+        color: inherit;
+      }
+    }
+  }
 }
 
 .bg-green {

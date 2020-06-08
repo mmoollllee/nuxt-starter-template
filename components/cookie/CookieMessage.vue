@@ -58,6 +58,7 @@
   width: 100%;
   max-width: 480px;
   box-shadow: 0 0 12px -5px var(--primary-shadow);
+  color: var(--body-color);
 
   &,
   * {

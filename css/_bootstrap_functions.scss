@@ -20,10 +20,12 @@ $primary-gray-light: lighten($primary-gray, 20%);
 $primary-gray-lighter: lighten($primary-gray, 30%);
 $primary-shadow: darken($primary, 90%);
 $body-bg: #E40039;
-// $body-color: $gray-900;
+$body-color: #111;
+
 
 :root {
   --body-bg: #{$body-bg};
+  --body-color: #{$body-color};
   --primary-shadow: #{$primary-shadow};
   --primary-dark: #{$primary-dark};
   --primary-light: #{$primary-light};
