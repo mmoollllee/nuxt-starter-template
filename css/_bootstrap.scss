@@ -62,6 +62,7 @@ $headings-font-weight: 800;
 // Reset Body Background as #wrapper & #responsive-menu are overlapping
 body {
   background: transparent !important;
+  color: #fff
 }
 
 // Custom Grid Stuff
@@ -77,5 +78,10 @@ body {
 }
 
 .bg-gray {
-  background-color: $primary-gray;
+  background-color: $primary-gray-lighter;
+}
+
+.anchor {
+  position: absolute;
+  margin-top: -200px;
 }

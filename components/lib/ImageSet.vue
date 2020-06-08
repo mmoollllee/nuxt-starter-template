@@ -32,7 +32,7 @@
         :type="'image/' + fileMIME"
       />
       <source
-        v-else
+        v-else-if="sizes != 'mini'"
         :srcset="require('~/assets/' + src + '?lqip')"
         :data-srcset="
           require('~/assets/' +
@@ -43,6 +43,14 @@
         :type="'image/' + fileMIME"
       />
       <img
+        v-if="sizes == 'mini'"
+        :src="require('~/assets/' + src + '?lqip')"
+        :data-src="require('~/assets/' + src + '?size=75')"
+        :alt="alt"
+        class="lazyload"
+      />
+      <img
+        v-else
         :src="require('~/assets/' + src + '?lqip')"
         :data-src="require('~/assets/' + src + '?size=2000')"
         :alt="alt"

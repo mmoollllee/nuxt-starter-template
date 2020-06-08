@@ -119,7 +119,7 @@ export default {
   },
   sitemap: {
     hostname,
-    exclude: ['/icons'],
+    exclude: ['/icons', '/not-supported'],
     routes: [
       {
         url: '/',
@@ -139,7 +139,8 @@ export default {
       priority: 0.5,
       lastmod: new Date(),
       lastmodrealtime: true
-    }
+    },
+    trailingSlash: true
   },
   webfontloader: {
     custom: {

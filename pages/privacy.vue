@@ -2,7 +2,7 @@
   <main>
     <h1 class="container title">
       <span class="bg-primary">privacy</span><br />
-      <span class="bg-white">Kurt Gansloser GmbH</span>
+      <span class="bg-white">Company</span>
     </h1>
     <div class="container">
       <section id="content" class="card row">

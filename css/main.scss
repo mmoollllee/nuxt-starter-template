@@ -1,7 +1,5 @@
 @import '_bootstrap';
 
-@import 'swiper/swiper.scss';
-
 @import '_nuxt';
 @import '_icons';
 @import '_transitions';
@@ -57,7 +55,7 @@ h1.title {
   @include media-breakpoint-up(l) {
     margin-top: -3rem;
   }
-  > * {
+  > figure {
     object-fit: cover;
     height: 100%;
     max-height: 60vh;
@@ -84,11 +82,18 @@ h1.title {
 
 .card {
   background: #fff;
+  color: var(--body-color);
+}
+
+.card, .no-card {
   padding: 1em;
   margin-bottom: auto;
 
+  &.row {
+    margin: 0 0 1.5rem !important;
+  }
+
   [class*="col-"] {
-    &:not(:first-of-type) {
       h2 {
         margin-top: 2rem
       }
@@ -98,11 +103,14 @@ h1.title {
       h4 {
         margin-top: 1rem
       }
-    }
+  }
+
+  @include media-breakpoint-up(s) {
+    padding:2rem
   }
 
   @include media-breakpoint-up(m) {
-    padding:2rem
+    padding:2.5rem 2rem 2rem 3rem
   }
 }
 
@@ -122,49 +130,24 @@ figure + .card {
 }
 
 .info-box {
-  width: auto;
-
-  .h3 {
-    color: var(--primary);
-    font-size: 1.3em;
-    margin-bottom: 0;
-    padding: 0 0.5rem;
-  }
-  .bg-gray {
-    color: #fff;
-    padding: 0.5rem;
-  }
+  border-radius: 1rem;
+  padding: 1em 1em 0 !important;
+  margin: 1em !important;
+  font-weight: bold;
 }
 
-// --------------------------
-// Buttons & Fonts
-// --------------------------
-
-h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-  &.button, .button {
-    font-weight: inherit;
-    line-height: inherit;
-    padding-bottom: inherit;
-    margin: inherit;
-    margin-top: 0;
-    --padding-x: .75em;
-  }
+.bg-green {
+  background: #90C78B;
+  color: #fff;
 }
 
-a:hover {
-  h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
-    &.bg-white, .bg-white {
-      color: var(--primary-light);
-    }
-    &.button, .button {
-      --backgroundcolor: var(--primary-gray-dark);
-      color: #fff;
-      background-position: 0;
-      &:after {
-        color: inherit;
-      }
-    }
-  }
+.bg-red {
+  background: rgb(218, 110, 48);
+  color: #fff;
+}
+
+p, ul li {
+  max-width: 690px;
 }
 
 
@@ -173,7 +156,26 @@ a:hover {
 // -----------------------
 
 .fancybox-content {
+  color: #000;
+  display: inline-block !important;
+  padding: 40px 20px !important;
+
   .row {
     max-width: 960px;
+  }
+
+  & > .row {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+  }
+
+  @include media-breakpoint-up(s) {
+    padding: 40px !important
+  }
+  
+  &#content {
+    max-width: var(--breakpoint-xxl);
   }
 }

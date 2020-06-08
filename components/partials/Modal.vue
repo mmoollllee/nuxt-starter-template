@@ -9,37 +9,59 @@
 </template>
 
 <style lang="scss" scoped>
-.content {
+@import '~/css/_bootstrap_functions.scss';
+
+.modal {
   position: fixed;
   z-index: 100;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  overflow: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  max-width: 100vw;
+  padding: 0;
+}
+
+.content {
   background: white;
   box-shadow: 0 0px 90px -30px var(--primary-shadow);
-  max-height: 95vh;
-  overflow: auto;
   padding: 2rem;
+  margin-top: -100vh;
   transition: transform 1s !important;
+  color: var(--body-color);
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media-breakpoint-up(sm) {
+    margin-top: -95vh;
+    margin-bottom: 5vh;
+  }
+  @include media-breakpoint-up(l) {
+    margin-top: -90vh;
+    margin-bottom: 10vh;
+  }
 }
 
 #overlay {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  z-index: 50;
+  z-index: 0;
   background: rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
 .icon-times {
-  position: sticky;
-  top: 0;
+  position: absolute;
+  top: 15px;
+  right: 10px;
   float: right;
   padding: 0 10px 5px;
   font-size: 1.3rem;
+  text-decoration: none;
   &:hover {
     text-decoration: none;
   }
@@ -54,6 +76,10 @@
     transition: transform 1s, opacity 1s !important;
   }
 }
+
+p {
+  max-width: 100%;
+}
 </style>
 
 <style>
@@ -66,18 +92,11 @@ body.modal-active {
 import Vue from 'vue'
 
 export default Vue.extend({
-  head() {
-    return {
-      bodyAttrs: {
-        class: 'modal-active'
-      }
-    }
-  },
   data() {
     return {
       moving: false,
       closing: false,
-      escPressed: false
+      askBeforeClose: false
     }
   },
   computed: {
@@ -89,17 +108,35 @@ export default Vue.extend({
     }
   },
   mounted() {
-    this.focusModal()
+    const body = document.querySelector('body')
+    if (body) {
+      body.classList.add('modal-active')
+    }
+  },
+  destroyed() {
+    this.removeModalActive()
   },
   methods: {
+    removeModalActive(): void {
+      const body = document.querySelector('body')
+      if (body) {
+        body.classList.remove('modal-active')
+      }
+    },
     closeModal(): void {
+      if (
+        this.askBeforeClose &&
+        !confirm(
+          'Ihre Änderungen gehen verloren wenn Sie diese Seite verlassen.'
+        )
+      ) {
+        return
+      }
+      this.removeModalActive()
       this.$nuxt.$router.push(this.toParent)
     },
-    focusModal(): void {
-      const modal = document.getElementById('modal')
-      if (modal) {
-        setTimeout(() => modal.focus(), 300)
-      }
+    preventClose(): void {
+      this.askBeforeClose = true
     }
   }
 })

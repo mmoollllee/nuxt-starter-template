@@ -41,3 +41,10 @@
  {
   bottom: -0.12em;
 }
+
+a[data-fancybox]:not([href]) {
+  cursor: pointer;
+  &:not([data-icon-right]):not([data-icon-left]) {
+    text-decoration: underline;
+  }
+}
