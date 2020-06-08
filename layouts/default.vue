@@ -13,7 +13,7 @@ import Footer from '@/components/Footer.vue'
 import ResponsiveMenu from '@/components/ResponsiveMenu.vue'
 import CookieMessage from '@/components/cookie/CookieMessage.vue'
 
-function getInternetExplorerVersion(name) {
+function getInternetExplorerVersion(name: string) {
   const trident = new RegExp('Trident/.*rv:([0-9]{1,}[\\.0-9]{0,})')
 
   if (trident.exec(name) != null) {
