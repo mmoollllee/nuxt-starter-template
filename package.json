@@ -14,7 +14,6 @@
     "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
   },
   "dependencies": {
-    "@bazzite/nuxt-optimized-images": "^0.3.0",
     "@fancyapps/fancybox": "^3.5.7",
     "@nuxtjs/manifest": "^3.0.0-beta.16",
     "@nuxtjs/sitemap": "^2.3.1",
@@ -39,6 +38,7 @@
     "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
+    "@aceforth/nuxt-optimized-images": "^1.0.1",
     "@nuxt/typescript-build": "^0.5.6",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.2.0",

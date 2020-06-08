@@ -103,7 +103,7 @@ export default {
         rfg
       }
     ],
-    '@bazzite/nuxt-optimized-images',
+    '@aceforth/nuxt-optimized-images',
     '@nuxtjs/svg',
     'nuxt-purgecss',
     'nuxt-webfontloader',
