@@ -29,7 +29,7 @@ import ImageSet from '~/components/lib/ImageSet.vue'
 
 export default Vue.extend({
   components: {
-    ImageSet
-  }
+    ImageSet,
+  },
 })
 </script>

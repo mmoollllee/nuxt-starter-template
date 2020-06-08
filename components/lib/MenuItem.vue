@@ -7,11 +7,11 @@
       v-bind="dataAttributes"
       :target="target"
       :rel="rel"
-      ><span v-html="content" class="my-auto"></span
+      ><span class="my-auto" v-html="content"></span
     ></a>
 
     <nuxt-link v-else :to="href" v-bind="dataAttributes"
-      ><span v-html="content" class="my-auto"></span
+      ><span class="my-auto" v-html="content"></span
     ></nuxt-link>
   </li>
 </template>
@@ -69,28 +69,28 @@ export default Vue.extend({
   props: {
     href: {
       type: String,
-      default: '#'
+      default: '#',
     },
     text: {
       type: String,
-      default: 'Link'
+      default: 'Link',
     },
     icon: {
       type: String,
-      default: ''
+      default: '',
     },
     iconLeft: {
       type: String,
-      default: ''
+      default: '',
     },
     iconRight: {
       type: String,
-      default: ''
+      default: '',
     },
     target: {
       type: String,
-      default: null
-    }
+      default: null,
+    },
   },
 
   computed: {
@@ -116,7 +116,7 @@ export default Vue.extend({
       } else {
         return null
       }
-    }
-  }
+    },
+  },
 })
 </script>

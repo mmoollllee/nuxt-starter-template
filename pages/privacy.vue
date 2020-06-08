@@ -46,9 +46,9 @@
             using cookies and allow or prohibit third party services.
           </p>
           <button
-            @click="openCookiePrefs"
             class="button secondary"
             data-icon-right="n"
+            @click="openCookiePrefs"
           >
             Change Configuration
           </button>
@@ -68,19 +68,19 @@ import infos from '@/config/infos.json'
 export default Vue.extend({
   data() {
     return {
-      contact: infos.contact
+      contact: infos.contact,
     }
   },
   methods: {
     parsePhoneNumberFromString,
     openCookiePrefs() {
       this.$store.commit('cookies/openMessage')
-    }
+    },
   },
   head() {
     return {
-      title: 'privacy'
+      title: 'privacy',
     }
-  }
+  },
 })
 </script>

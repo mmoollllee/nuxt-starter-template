@@ -47,13 +47,13 @@ import ImageSet from '~/components/lib/ImageSet.vue'
 
 export default Vue.extend({
   components: {
-    ImageSet
+    ImageSet,
   },
   props: {
     classes: {
       type: String,
-      default: 'col-6 col-s-5 col-m-4 text-m-center'
-    }
+      default: 'col-6 col-s-5 col-m-4 text-m-center',
+    },
   },
   data() {
     return {
@@ -61,27 +61,27 @@ export default Vue.extend({
         {
           name: 'Miss Mueller',
           position: 'Management',
-          image: 'images/placeholders/party.jpg'
+          image: 'images/placeholders/party.jpg',
         },
         {
           name: 'Mister Mueller',
           position: 'Office Managment',
-          image: 'images/placeholders/pichilemu0.jpg'
+          image: 'images/placeholders/pichilemu0.jpg',
         },
         {
           name: 'Miss Schmidt',
-          image: 'images/placeholders/pichilemu1.jpg'
+          image: 'images/placeholders/pichilemu1.jpg',
         },
         {
           name: 'Mister Schmidt',
-          image: 'images/placeholders/pichilemu2.jpg'
+          image: 'images/placeholders/pichilemu2.jpg',
         },
         {
           name: 'Miss Schmitt',
-          image: 'images/placeholders/pichilemu3.jpg'
-        }
-      ]
+          image: 'images/placeholders/pichilemu3.jpg',
+        },
+      ],
     }
-  }
+  },
 })
 </script>

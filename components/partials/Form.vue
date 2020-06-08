@@ -1,8 +1,8 @@
 <template>
   <form class="form">
     <div
-      :class="form.status"
       v-if="form.statusMessage"
+      :class="form.status"
       class="col-12 status-message"
     >
       {{ form.statusMessage }}
@@ -14,11 +14,11 @@
       <span class="label">Last Name</span>
       <input
         v-model.trim="form.name"
-        @input="$v.form.name.$touch()"
         type="text"
         placeholder="Last Name"
         name="name"
         required="required"
+        @input="$v.form.name.$touch()"
       />
       <div v-if="!$v.form.name.required && form.showErrors" class="error">
         This field is required.
@@ -29,10 +29,10 @@
       <span class="label">Company (optional)</span>
       <input
         v-model.trim="form.company"
-        @input="$v.form.company.$touch()"
         type="text"
         placeholder="Company (optional)"
         name="company"
+        @input="$v.form.company.$touch()"
       />
     </label>
 
@@ -43,11 +43,11 @@
       <span class="label">Email Adress</span>
       <input
         v-model.trim="form.mail"
-        @input="$v.form.mail.$touch()"
         type="email"
         placeholder="Email Adress"
         name="mail"
         required="required"
+        @input="$v.form.mail.$touch()"
       />
       <div v-if="!$v.form.mail.required && form.showErrors" class="error">
         This field is required.
@@ -61,10 +61,10 @@
       <span class="label">Phone (optional)</span>
       <input
         v-model.trim="form.phone"
-        @input="$v.form.phone.$touch()"
         type="text"
         placeholder="Phone (optional)"
         name="phone"
+        @input="$v.form.phone.$touch()"
       />
     </label>
 
@@ -72,11 +72,11 @@
       <span class="label">subject</span>
       <input
         v-model.trim="form.subject"
-        @input="$v.form.subject.$touch()"
         type="text"
         placeholder="subject"
         name="subject"
         required="required"
+        @input="$v.form.subject.$touch()"
       />
     </label>
     <div v-if="!$v.form.subject.mustBeEmpty && form.showErrors" class="col-12">
@@ -89,14 +89,14 @@
       <span class="label">Message</span>
       <textarea
         v-model.trim="form.message"
-        @input="
-          $v.form.message.$touch()
-          autoGrow($event)
-        "
         type="text"
         placeholder="Your Message"
         name="message"
         required="required"
+        @input="
+          $v.form.message.$touch()
+          autoGrow($event)
+        "
       />
       <div v-if="!$v.form.message.required && form.showErrors" class="error">
         Please tell us your request.
@@ -107,31 +107,31 @@
       class="col-12 col-l-11 tt-100 text-right"
     >
       <button
-        @click.prevent="clearForm"
         v-if="form.status === 'success'"
-        @mouseover="messageSentCaption = 'Set form back to default'"
-        @mouseleave="messageSentCaption = 'Message sent'"
         type="submit"
         class="button success"
         data-icon-right="f"
+        @click.prevent="clearForm"
+        @mouseover="messageSentCaption = 'Set form back to default'"
+        @mouseleave="messageSentCaption = 'Message sent'"
       >
         {{ messageSentCaption }}
       </button>
       <button
-        @click.prevent="submitForm"
         v-else
         type="submit"
         class="button"
         data-icon-right="c"
+        @click.prevent="submitForm"
       >
         Send Message
       </button>
       <label>
         <input
           v-model.trim="form.privacy"
-          @input="$v.form.privacy.$touch()"
           type="checkbox"
           name="privacy"
+          @input="$v.form.privacy.$touch()"
         />
         <span class="label"
           >Consent to the use of data in accordance with
@@ -202,36 +202,36 @@ export default {
         showErrors: false,
         statusMessage: null,
         status: '',
-        messageSentCaption: 'Message sent'
-      }
+        messageSentCaption: 'Message sent',
+      },
     }
   },
   validations: {
     form: {
       name: {
-        required
+        required,
       },
       company: {},
       mail: {
         required,
-        email
+        email,
       },
       phone: {},
       subject: {
-        mustBeEmpty
+        mustBeEmpty,
       },
       message: {
-        required
+        required,
       },
       privacy: {
-        mustBeTrue
-      }
-    }
+        mustBeTrue,
+      },
+    },
   },
   methods: {
     autoGrow(event) {
       const el = event.target
-      setTimeout(function() {
+      setTimeout(function () {
         el.style.cssText = 'height:auto; padding:0'
         el.style.cssText = 'height:' + (el.scrollHeight + 30) + 'px'
       }, 0)
@@ -254,7 +254,7 @@ export default {
       axios({
         method: 'post',
         url: '/mailer.php',
-        data: contactFormData
+        data: contactFormData,
       })
         .then((response) => {
           // Handle success.
@@ -277,9 +277,9 @@ export default {
         subject: '',
         message: '',
         privacy: false,
-        showErrors: false
+        showErrors: false,
       }
-    }
-  }
+    },
+  },
 }
 </script>

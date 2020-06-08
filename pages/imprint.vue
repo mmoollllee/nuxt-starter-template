@@ -65,16 +65,16 @@ import infos from '@/config/infos.json'
 export default Vue.extend({
   data() {
     return {
-      contact: infos.contact
+      contact: infos.contact,
     }
   },
   methods: {
-    parsePhoneNumberFromString
+    parsePhoneNumberFromString,
   },
   head() {
     return {
-      title: 'Imprint'
+      title: 'Imprint',
     }
-  }
+  },
 })
 </script>

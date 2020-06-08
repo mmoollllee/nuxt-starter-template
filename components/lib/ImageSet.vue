@@ -117,26 +117,26 @@ export default Vue.extend({
   props: {
     src: {
       type: String,
-      required: true
+      required: true,
     },
     alt: {
       type: String,
-      default: ''
+      default: '',
     },
     sizes: {
       type: [Boolean, String],
-      default: false
+      default: false,
     },
     caption: {
       type: [Boolean, String],
-      default: false
-    }
+      default: false,
+    },
   },
 
   computed: {
     fileMIME(): String {
       return getFileMIME(this.src)
-    }
-  }
+    },
+  },
 })
 </script>

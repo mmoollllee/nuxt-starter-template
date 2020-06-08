@@ -149,29 +149,29 @@ import ImageSet from '~/components/lib/ImageSet.vue'
 
 export default Vue.extend({
   components: {
-    ImageSet
+    ImageSet,
   },
   props: {
     to: {
       type: String,
-      default: ''
+      default: '',
     },
     image: {
       type: String,
-      required: true
+      required: true,
     },
     title1: {
       type: String || null,
-      default: null
+      default: null,
     },
     title: {
       type: String || null,
-      required: true
+      required: true,
     },
     className: {
       type: String || null,
-      default: null
-    }
+      default: null,
+    },
   },
   computed: {
     fullTitle(): String {
@@ -179,7 +179,7 @@ export default Vue.extend({
     },
     isLink(): Boolean {
       return this.to !== ''
-    }
-  }
+    },
+  },
 })
 </script>

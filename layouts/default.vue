@@ -35,7 +35,7 @@ export default Vue.extend({
     Header,
     Footer,
     ResponsiveMenu,
-    CookieMessage
+    CookieMessage,
   },
   beforeCreate() {
     const ie = process.server
@@ -44,9 +44,9 @@ export default Vue.extend({
 
     if (ie <= 11 && this.$route.name !== 'not-supported') {
       this.$router.push({
-        path: '/not-supported'
+        path: '/not-supported',
       })
     }
-  }
+  },
 })
 </script>

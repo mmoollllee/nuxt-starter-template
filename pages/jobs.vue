@@ -48,14 +48,14 @@ import ImageSet from '~/components/lib/ImageSet.vue'
 
 export default {
   components: {
-    ImageSet
+    ImageSet,
   },
   head() {
     return {
-      title: 'Job Offers at Company GmbH'
+      title: 'Job Offers at Company GmbH',
     }
   },
-  scrollToTop: false
+  scrollToTop: false,
 }
 </script>
 

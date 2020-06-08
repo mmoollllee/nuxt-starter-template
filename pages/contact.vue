@@ -71,20 +71,20 @@ export default {
   components: {
     ImageSet,
     Team,
-    Form
+    Form,
   },
   data() {
     return {
-      contact: infos.contact
-    }
-  },
-  head() {
-    return {
-      title: 'Contact – Company GmbH'
+      contact: infos.contact,
     }
   },
   methods: {
-    parsePhoneNumberFromString
-  }
+    parsePhoneNumberFromString,
+  },
+  head() {
+    return {
+      title: 'Contact – Company GmbH',
+    }
+  },
 }
 </script>

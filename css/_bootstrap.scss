@@ -11,26 +11,25 @@ $headings-font-weight: 800;
   --headings-font-family: #{$headings-font-family};
 }
 
-
 // -----------------
 // Bootstrap Imports
 // -----------------
 
-@import "_bootstrap_functions.scss";
-@import "bootstrap/scss/_root.scss";
-@import "bootstrap/scss/_reboot.scss";
-@import "bootstrap/scss/_type.scss";
+@import '_bootstrap_functions.scss';
+@import 'bootstrap/scss/_root.scss';
+@import 'bootstrap/scss/_reboot.scss';
+@import 'bootstrap/scss/_type.scss';
 // @import "bootstrap/scss/_images.scss";
 // @import "bootstrap/scss/_code.scss";
-@import "bootstrap/scss/_grid.scss";
-@import "bootstrap/scss/_tables.scss";
-@import "bootstrap/scss/_forms.scss";
+@import 'bootstrap/scss/_grid.scss';
+@import 'bootstrap/scss/_tables.scss';
+@import 'bootstrap/scss/_forms.scss';
 // @import "bootstrap/scss/_buttons.scss";
 // @import "bootstrap/scss/_transitions.scss";
 // @import "bootstrap/scss/_dropdown.scss";
 // @import "bootstrap/scss/_button-group.scss";
 // @import "bootstrap/scss/_input-group.scss";
-@import "bootstrap/scss/_custom-forms.scss";
+@import 'bootstrap/scss/_custom-forms.scss';
 // @import "bootstrap/scss/_nav.scss";
 // @import "bootstrap/scss/_navbar.scss";
 // @import "bootstrap/scss/_card.scss";
@@ -49,11 +48,10 @@ $headings-font-weight: 800;
 // @import "bootstrap/scss/_popover.scss";
 // @import "bootstrap/scss/_carousel.scss";
 // @import "bootstrap/scss/_spinners.scss";
-@import "bootstrap/scss/_utilities.scss";
-@import "bootstrap/scss/_print.scss";
+@import 'bootstrap/scss/_utilities.scss';
+@import 'bootstrap/scss/_print.scss';
 
 // @import 'bootstrap-vue/src/index.scss';
-
 
 // -----------------
 // Bootstrap Custom Fixes
@@ -62,7 +60,7 @@ $headings-font-weight: 800;
 // Reset Body Background as #wrapper & #responsive-menu are overlapping
 body {
   background: transparent !important;
-  color: #fff
+  color: #fff;
 }
 
 // Custom Grid Stuff

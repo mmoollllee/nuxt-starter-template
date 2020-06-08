@@ -1,7 +1,7 @@
 <template>
   <div :class="closing ? 'closing' : ''" class="modal">
     <div id="overlay" @click="closeModal" />
-    <div id="modal" @keydown.esc="closeModal" class="content container">
+    <div id="modal" class="content container" @keydown.esc="closeModal">
       <nuxt-link :to="toParent" class="icon-times" />
       <slot />
     </div>
@@ -96,7 +96,7 @@ export default Vue.extend({
     return {
       moving: false,
       closing: false,
-      askBeforeClose: false
+      askBeforeClose: false,
     }
   },
   computed: {
@@ -105,7 +105,7 @@ export default Vue.extend({
       const offset = hirarchy[hirarchy.length - 1] === '' ? 3 : 2
       const parent = hirarchy[hirarchy.length - offset]
       return '/' + parent
-    }
+    },
   },
   mounted() {
     const body = document.querySelector('body')
@@ -137,7 +137,7 @@ export default Vue.extend({
     },
     preventClose(): void {
       this.askBeforeClose = true
-    }
-  }
+    },
+  },
 })
 </script>

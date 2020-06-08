@@ -25,9 +25,9 @@
     </nav>
     <button
       :class="menuVisible && 'icon-times'"
-      @click="menuToggle"
       aria-label="Menu"
       class="d-m-none icon-bars sidebar-toggle font-200 pl-3 pr-4 align-self-center"
+      @click="menuToggle"
     ></button>
   </header>
 </template>
@@ -70,24 +70,24 @@ import menus from '@/config/menus.json'
 export default Vue.extend({
   components: {
     ImageSet,
-    MenuItem
+    MenuItem,
   },
   data() {
     return {
       menuMain: menus.menuMain,
-      menuSocial: menus.menuSocial
+      menuSocial: menus.menuSocial,
     }
   },
   computed: {
     menuVisible(): Boolean {
       return this.$store.state.menu.visible[0]
-    }
+    },
   },
   methods: {
     menuToggle(e: Event) {
       e.preventDefault()
       this.$store.commit('menu/toggle')
-    }
-  }
+    },
+  },
 })
 </script>

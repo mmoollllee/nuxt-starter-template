@@ -22,13 +22,13 @@ import ApplicationForm from '~/components/partials/ApplicationForm.vue'
 export default {
   components: {
     Modal,
-    ApplicationForm
+    ApplicationForm,
   },
   head() {
     return {
-      title: 'Speculative Application – Company GmbH'
+      title: 'Speculative Application – Company GmbH',
     }
   },
-  scrollToTop: false
+  scrollToTop: false,
 }
 </script>

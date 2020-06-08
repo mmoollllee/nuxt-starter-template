@@ -1,8 +1,8 @@
 <template>
   <form class="form">
     <div
-      :class="form.status"
       v-if="form.statusMessage"
+      :class="form.status"
       class="col-12 status-message"
     >
       {{ form.statusMessage }}
@@ -14,11 +14,11 @@
       <span class="label">Last Name</span>
       <input
         v-model.trim="form.name"
-        @input="$v.form.name.$touch()"
         type="text"
         placeholder="Last Name"
         name="name"
         required="required"
+        @input="$v.form.name.$touch()"
       />
       <div v-if="!$v.form.name.required && form.showErrors" class="error">
         This field is required.
@@ -32,11 +32,11 @@
       <span class="label">First Name</span>
       <input
         v-model.trim="form.firstName"
-        @input="$v.form.firstName.$touch()"
         type="text"
         placeholder="First Name"
         name="firstName"
         required="required"
+        @input="$v.form.firstName.$touch()"
       />
       <div v-if="!$v.form.firstName.required && form.showErrors" class="error">
         This field is required.
@@ -50,11 +50,11 @@
       <span class="label">Phone </span>
       <input
         v-model.trim="form.phone"
-        @input="$v.form.phone.$touch()"
         type="text"
         placeholder="Phone (Mobile)"
         name="phone"
         required="required"
+        @input="$v.form.phone.$touch()"
       />
     </label>
 
@@ -65,10 +65,10 @@
       <span class="label">Email Adress</span>
       <input
         v-model.trim="form.mail"
-        @input="$v.form.mail.$touch()"
         type="email"
         placeholder="Email Adress"
         name="mail"
+        @input="$v.form.mail.$touch()"
       />
       <div v-if="!$v.form.mail.email && form.showErrors" class="error">
         This email address does not seem to be valid?
@@ -84,8 +84,8 @@
           class="custom-control custom-switch col-auto job"
         >
           <input
-            v-model="form.application"
             :id="job"
+            v-model="form.application"
             :value="job"
             :checked="type == job"
             type="checkbox"
@@ -102,11 +102,11 @@
       <span class="label">subject</span>
       <input
         v-model.trim="form.subject"
-        @input="$v.form.subject.$touch()"
         type="text"
         placeholder="subject"
         name="subject"
         required="required"
+        @input="$v.form.subject.$touch()"
       />
     </label>
     <div v-if="!$v.form.subject.mustBeEmpty && form.showErrors" class="col-12">
@@ -119,14 +119,14 @@
       <span class="label">Your message</span>
       <textarea
         v-model.trim="form.message"
-        @input="
-          $v.form.message.$touch()
-          autoGrow($event)
-        "
         type="text"
         placeholder="About you"
         name="message"
         required="required"
+        @input="
+          $v.form.message.$touch()
+          autoGrow($event)
+        "
       />
       <div v-if="!$v.form.message.required && form.showErrors" class="error">
         Please tell us something about you
@@ -137,31 +137,31 @@
       class="col-12 col-l-11 tt-100 text-right"
     >
       <button
-        @click.prevent="clearForm"
         v-if="form.status === 'success'"
-        @mouseover="messageSentCaption = 'Reset form'"
-        @mouseleave="messageSentCaption = 'application sent'"
         type="submit"
         class="button success"
         data-icon-right="f"
+        @click.prevent="clearForm"
+        @mouseover="messageSentCaption = 'Reset form'"
+        @mouseleave="messageSentCaption = 'application sent'"
       >
         {{ messageSentCaption }}
       </button>
       <button
-        @click.prevent="submitForm"
         v-else
         type="submit"
         class="button"
         data-icon-right="c"
+        @click.prevent="submitForm"
       >
         send
       </button>
       <label>
         <input
           v-model.trim="form.privacy"
-          @input="$v.form.privacy.$touch()"
           type="checkbox"
           name="privacy"
+          @input="$v.form.privacy.$touch()"
         />
         <span class="label"
           >Consent to the use of data in accordance with
@@ -224,16 +224,16 @@ export default {
   props: {
     type: {
       type: String,
-      default: ''
+      default: '',
     },
     title: {
       type: String,
-      default: 'For which job are you applying?'
+      default: 'For which job are you applying?',
     },
     jobs: {
       type: Array,
-      default: () => ['Office Work m/f/d', 'Photography Work m/f/d']
-    }
+      default: () => ['Office Work m/f/d', 'Photography Work m/f/d'],
+    },
   },
   data() {
     return {
@@ -249,40 +249,40 @@ export default {
         showErrors: false,
         statusMessage: '',
         status: '',
-        messageSentCaption: 'application sent'
-      }
+        messageSentCaption: 'application sent',
+      },
     }
   },
   validations: {
     form: {
       name: {
-        required
+        required,
       },
       firstName: {
-        required
+        required,
       },
       mail: {
-        email
+        email,
       },
       phone: {
-        required
+        required,
       },
       application: {},
       subject: {
-        mustBeEmpty
+        mustBeEmpty,
       },
       message: {
-        required
+        required,
       },
       privacy: {
-        mustBeTrue
-      }
-    }
+        mustBeTrue,
+      },
+    },
   },
   methods: {
     autoGrow(event) {
       const el = event.target
-      setTimeout(function() {
+      setTimeout(function () {
         el.style.cssText = 'height:auto; padding:0'
         el.style.cssText = 'height:' + (el.scrollHeight + 10) + 'px'
       }, 0)
@@ -305,7 +305,7 @@ export default {
       axios({
         method: 'post',
         url: '/mailer.php',
-        data: contactFormData
+        data: contactFormData,
       })
         .then((response) => {
           // Handle success.
@@ -328,9 +328,9 @@ export default {
         subject: '',
         message: '',
         privacy: false,
-        showErrors: false
+        showErrors: false,
       }
-    }
-  }
+    },
+  },
 }
 </script>

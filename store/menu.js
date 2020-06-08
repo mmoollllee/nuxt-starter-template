@@ -1,7 +1,7 @@
 export const state = () => ({
   visible: {
-    0: false
-  }
+    0: false,
+  },
 })
 
 export const mutations = {
@@ -19,5 +19,5 @@ export const mutations = {
     menuId = menuId || 0
 
     state.visible[menuId] = false
-  }
+  },
 }

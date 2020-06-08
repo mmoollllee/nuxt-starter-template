@@ -95,30 +95,30 @@ import menus from '@/config/menus.json'
 
 export default Vue.extend({
   components: {
-    MenuItem
+    MenuItem,
   },
   data() {
     return {
       menuMain: menus.menuMain,
       menuFooter: menus.menuFooter,
-      menuSocial: menus.menuSocial
+      menuSocial: menus.menuSocial,
     }
   },
   computed: {
     menuVisible(): Boolean {
       return this.$store.state.menu.visible[0]
-    }
+    },
   },
   watch: {
     $route() {
       this.$store.commit('menu/close')
-    }
+    },
   },
   methods: {
     menuToggle(e: Event) {
       e.preventDefault()
       this.$store.commit('menu/toggle')
-    }
-  }
+    },
+  },
 })
 </script>

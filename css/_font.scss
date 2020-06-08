@@ -136,7 +136,6 @@
   font-family: 'futura-pt', sans-serif;
 }
 
-
 // -----------------
 // font-size by Percent with .font-X
 // -----------------
@@ -157,55 +156,70 @@
   }
 }
 
-
 // -----------------
 // Project Specific
 // -----------------
-h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
   text-transform: uppercase;
   margin-bottom: 1em;
   display: block;
 
-  &[class^="bg-"], [class^="bg-"] {
-    display:inline-block;
-    padding-left: .75rem;
-    padding-right: .75rem;
+  &[class^='bg-'],
+  [class^='bg-'] {
+    display: inline-block;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
-  &.bg-gray, .bg-gray, &.bg-primary, .bg-primary {
+  &.bg-gray,
+  .bg-gray,
+  &.bg-primary,
+  .bg-primary {
     color: #fff;
   }
-  &.bg-white, .bg-white {
+  &.bg-white,
+  .bg-white {
     color: $primary;
   }
 
-  [class^="bg-"] {
-    margin-right: -.75rem
+  [class^='bg-'] {
+    margin-right: -0.75rem;
   }
 }
 
-h1, .h1 {
+h1,
+.h1 {
   padding-left: 1rem;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 1.5rem;
 }
-  
-h3, .h3 {
+
+h3,
+.h3 {
   font-size: 1.3rem;
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-weight: initial;
   font-size: 1.1rem;
-  margin-bottom: .2em;
+  margin-bottom: 0.2em;
 }
 
-h5, .h5 {
+h5,
+.h5 {
   font-family: $font-family-sans-serif;
   font-weight: 600;
   font-size: 1rem;
-  margin-bottom: .2em;
+  margin-bottom: 0.2em;
 }
-

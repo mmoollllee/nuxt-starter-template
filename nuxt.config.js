@@ -18,8 +18,8 @@ const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? {
         router: {
-          base: '/nuxt-starter-template/'
-        }
+          base: '/nuxt-starter-template/',
+        },
       }
     : {}
 
@@ -28,80 +28,80 @@ export default {
   mode: 'universal',
   head: {
     htmlAttrs: {
-      lang
+      lang,
     },
     title,
     meta: [
       {
-        charset: 'utf-8'
+        charset: 'utf-8',
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       {
         hid: 'description',
         name: 'description',
-        content: description
-      }
+        content: description,
+      },
     ],
     link: [
       {
         rel: 'preconnect',
-        href: 'https://use.typekit.net'
-      }
-    ]
+        href: 'https://use.typekit.net',
+      },
+    ],
   },
   loading: {
-    color: '#fff'
+    color: '#fff',
   },
   css: [
     '@/css/main.scss',
     {
       src: '@fancyapps/fancybox/src/css/core.css',
-      lang: 'css'
+      lang: 'css',
     },
     {
       src: '@fancyapps/fancybox/src/css/thumbs.css',
-      lang: 'css'
-    }
+      lang: 'css',
+    },
   ],
   postcss: {
     'postcss-cssnext': {
-      browsers: ['last 2 versions', '> 5%', 'ie >= 11']
-    }
+      browsers: ['last 2 versions', '> 5%', 'ie >= 11'],
+    },
   },
   plugins: [
     '~/plugins/vue-lazysizes.client.js',
     '~/plugins/jquery-fancybox',
-    '~/plugins/vuelidate'
+    '~/plugins/vuelidate',
   ],
   build: {
     analyze: false,
     html: {
       minify: {
-        decodeEntities: false
-      }
+        decodeEntities: false,
+      },
     },
     babel: {
-      sourceType: 'unambiguous'
+      sourceType: 'unambiguous',
     },
-    transpile: ['nuxt-vuex-localstorage']
+    transpile: ['nuxt-vuex-localstorage'],
   },
   buildModules: ['@nuxtjs/eslint-module', '@nuxt/typescript-build'],
   modules: [
     [
       'nuxt-vuex-localstorage',
       {
-        localStorage: ['cookies']
-      }
+        localStorage: ['cookies'],
+      },
     ],
     [
       'nuxt-rfg-icon',
       {
         masterPicture: './static/favicon.svg',
-        rfg
-      }
+        rfg,
+      },
     ],
     '@aceforth/nuxt-optimized-images',
     '@nuxtjs/svg',
@@ -109,13 +109,13 @@ export default {
     'nuxt-webfontloader',
     '@nuxtjs/sitemap',
     '@nuxtjs/manifest',
-    'nuxt-protected-mailto'
+    'nuxt-protected-mailto',
   ],
   manifest: {
     name: title,
     short_name: shortName,
     lang,
-    display: 'browser'
+    display: 'browser',
   },
   sitemap: {
     hostname,
@@ -123,38 +123,38 @@ export default {
     routes: [
       {
         url: '/',
-        priority: 1
+        priority: 1,
       },
       {
         url: '/imprint',
-        priority: 0.1
+        priority: 0.1,
       },
       {
         url: '/privacy',
-        priority: 0.1
-      }
+        priority: 0.1,
+      },
     ],
     defaults: {
       changefreq: 'monthly',
       priority: 0.5,
       lastmod: new Date(),
-      lastmodrealtime: true
+      lastmodrealtime: true,
     },
-    trailingSlash: true
+    trailingSlash: true,
   },
   webfontloader: {
     custom: {
       families: ['icon-font', 'proxima-nova:n4,i4,n7', 'futura-pt:n4,n7,n8'],
       testStrings: {
-        'icon-font': '\f101\f102'
+        'icon-font': '\f101\f102',
       },
-      classes: false
-    }
+      classes: false,
+    },
   },
   purgeCSS: {
     mode: 'postcss',
     whitelistPatterns: [/fancybox/, /icon-/],
-    whitelistPatternsChildren: [/fancybox/, /icon-/]
+    whitelistPatternsChildren: [/fancybox/, /icon-/],
   },
   optimizedImages: {
     inlineImageLimit: -1,
@@ -163,19 +163,19 @@ export default {
     optimizeImagesInDev: false,
     defaultImageLoader: 'img-loader',
     mozjpeg: {
-      quality: 80
+      quality: 80,
     },
     optipng: {
-      optimizationLevel: 3
+      optimizationLevel: 3,
     },
     pngquant: false,
     gifsicle: {
       interlaced: true,
-      optimizationLevel: 3
+      optimizationLevel: 3,
     },
     webp: {
       preset: 'default',
-      quality: 75
-    }
-  }
+      quality: 75,
+    },
+  },
 }

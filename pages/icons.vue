@@ -20,8 +20,8 @@ export default {
   name: 'IconsSection',
   data() {
     return {
-      icons
+      icons,
     }
-  }
+  },
 }
 </script>

@@ -95,7 +95,7 @@ export default {
   components: {
     JobOffersTeaser,
     GridItem,
-    DataAndFacts
+    DataAndFacts,
   },
   data() {
     return {
@@ -106,28 +106,28 @@ export default {
           title1: 'Lorem- &',
           title: 'Ipsum',
           className:
-            'style-1 col-12 col-xs-11 col-s-10 mr-s-auto col-sm-9 col-m-7 offset-m-1 col-l-6 mr-l-0 offset-l-0'
+            'style-1 col-12 col-xs-11 col-s-10 mr-s-auto col-sm-9 col-m-7 offset-m-1 col-l-6 mr-l-0 offset-l-0',
         },
         {
           to: '/justo-dolores',
           image: 'placeholders/cooking.jpg',
           title1: 'Justo &',
           title: 'Dolores',
-          className: 'style-2 col-12 col-xs-8 col-s-5 col-l-4'
+          className: 'style-2 col-12 col-xs-8 col-s-5 col-l-4',
         },
         {
           to: '/gubergren-accusam',
           image: 'placeholders/elba0.jpg',
           title1: 'Gubergren &',
           title: 'Accusam',
-          className: 'style-3 col-12 col-xs-10 col-s-6 col-l-5 order-l-last'
+          className: 'style-3 col-12 col-xs-10 col-s-6 col-l-5 order-l-last',
         },
         {
           to: '/lorem',
           image: 'placeholders/fire.jpg',
           title: 'Lorem',
           className:
-            'style-4 mr-auto col-12 col-s-6 col-sm-5 mr-sm-0 mr-m-5 col-m-4 col-l-3 mr-l-0'
+            'style-4 mr-auto col-12 col-s-6 col-sm-5 mr-sm-0 mr-m-5 col-m-4 col-l-3 mr-l-0',
         },
         {
           to: '/lorem-ipsum2',
@@ -135,11 +135,11 @@ export default {
           title1: 'Lorem &',
           title: 'Ipsum',
           className:
-            'style-5 ml-auto col-12 col-s-6 col-sm-5 ml-sm-0 col-m-4 col-xl-3'
-        }
-      ]
+            'style-5 ml-auto col-12 col-s-6 col-sm-5 ml-sm-0 col-m-4 col-xl-3',
+        },
+      ],
     }
   },
-  scrollToTop: false
+  scrollToTop: false,
 }
 </script>

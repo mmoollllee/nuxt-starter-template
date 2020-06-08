@@ -6,8 +6,10 @@
     </h3>
     <div class="row">
       <a
+        v-for="(image, index) in images"
+        :key="index"
+        v-bind="image"
         :href="require('~/assets/' + image + '?size=2000')"
-        v-for="image in images"
         class="col-6 col-sm-4 col-m-3"
       >
         <ImageSet :src="image" sizes="thumbnail" class="thumbnail" />
@@ -43,14 +45,8 @@ import ImageSet from '~/components/lib/ImageSet.vue'
 export default {
   components: {
     Modal,
-    ImageSet
+    ImageSet,
   },
-  head() {
-    return {
-      title: 'Lorem & Ipsum'
-    }
-  },
-  scrollToTop: false,
   data() {
     return {
       images: [
@@ -61,9 +57,15 @@ export default {
         'images/placeholders/boat1.jpg',
         'images/placeholders/canada.jpg',
         'images/placeholders/chile0.jpg',
-        'images/placeholders/chile1.jpg'
-      ]
+        'images/placeholders/chile1.jpg',
+      ],
     }
-  }
+  },
+  head() {
+    return {
+      title: 'Lorem & Ipsum',
+    }
+  },
+  scrollToTop: false,
 }
 </script>

@@ -7,7 +7,6 @@ $enable-caret: false; // default true
 $enable-validation-icons: false; // default true
 $enable-deprecation-messages: false; // default true
 
-
 // ---------------------------
 // Colors
 // ---------------------------
@@ -19,9 +18,8 @@ $primary-gray-dark: darken($primary-gray, 10%);
 $primary-gray-light: lighten($primary-gray, 20%);
 $primary-gray-lighter: lighten($primary-gray, 30%);
 $primary-shadow: darken($primary, 90%);
-$body-bg: #E40039;
+$body-bg: #e40039;
 $body-color: #111;
-
 
 :root {
   --body-bg: #{$body-bg};
@@ -35,7 +33,6 @@ $body-color: #111;
   --primary-gray-lighter: #{$primary-gray-lighter};
 }
 
-
 // ---------------------------
 // Links
 // ---------------------------
@@ -44,7 +41,6 @@ $body-color: #111;
 // $link-decoration: none;
 // $link-hover-color: darken($link-color, 15%);
 // $link-hover-decoration: underline;
-
 
 // ---------------------------
 // Spacing & Sizes
@@ -60,7 +56,7 @@ $grid-breakpoints: (
   m: 768px,
   l: 992px,
   xl: 1150px,
-  xxl: 1300px
+  xxl: 1300px,
 );
 
 // $container-max-widths: (
@@ -74,8 +70,7 @@ $grid-breakpoints: (
   --spacer: #{$spacer};
 }
 
-
 // Bootstrap Functional Imports
-@import "bootstrap/scss/_functions.scss";
-@import "bootstrap/scss/_variables.scss";
-@import "bootstrap/scss/_mixins.scss";
+@import 'bootstrap/scss/_functions.scss';
+@import 'bootstrap/scss/_variables.scss';
+@import 'bootstrap/scss/_mixins.scss';

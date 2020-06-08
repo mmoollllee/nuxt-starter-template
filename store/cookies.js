@@ -2,7 +2,7 @@ export const state = () => ({
   messageShown: false,
   collapsed: true,
   saved: false,
-  enabled: []
+  enabled: [],
 })
 
 export const mutations = {
@@ -19,5 +19,5 @@ export const mutations = {
   },
   collapse(state, value) {
     state.collapsed = !state.collapsed
-  }
+  },
 }

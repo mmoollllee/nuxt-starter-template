@@ -61,7 +61,7 @@ export default Vue.extend({
         decimalPlaces,
         duration: 2 + decimal[0].length / 5,
         separator: '.',
-        decimal: ','
+        decimal: ',',
       }
 
       const endValue = Number(inputValue.replace('.', '').replace(',', '.'))
@@ -71,6 +71,6 @@ export default Vue.extend({
       const countUp = new CountUp(el.id, endValue, options)
       countUp.start()
     })
-  }
+  },
 })
 </script>

@@ -19,13 +19,13 @@ import Modal from '~/components/partials/Modal.vue'
 
 export default {
   components: {
-    Modal
+    Modal,
   },
   head() {
     return {
-      title: 'Justo & Dolores'
+      title: 'Justo & Dolores',
     }
   },
-  scrollToTop: false
+  scrollToTop: false,
 }
 </script>

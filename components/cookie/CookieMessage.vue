@@ -3,7 +3,7 @@
     v-show="messageVisibile"
     :class="[
       $store.state.cookies.collapsed ? 'is-collapsed' : '',
-      windowTop >= 50 ? ' hide' : ''
+      windowTop >= 50 ? ' hide' : '',
     ]"
     class="cookie-message text-center"
   >
@@ -17,29 +17,29 @@
       </header>
       <div class="switches col-12 justify-content-center text-left">
         <CheckboxGroup
-          ref="checkboxes"
           v-for="(cookieGroup, index) in cookieGroups"
+          ref="checkboxes"
           :key="index"
-          :main="cookieGroup"
           v-model="selected"
+          :main="cookieGroup"
           :description="cookieGroup.description"
           :childs="cookieGroup.cookies"
           :index="index"
-          @newSelection="newSelection"
-          @removeItem="removeItem"
           namespace="cookie"
           class="col-auto"
+          @newSelection="newSelection"
+          @removeItem="removeItem"
         />
       </div>
       <div class="control col-12">
         <button
-          @click="collapse"
           :data-icon-right="$store.state.cookies.collapsed ? 'n' : 'm'"
           class="button secondary"
+          @click="collapse"
         >
           {{ $store.state.cookies.collapsed ? 'Options' : 'Close' }}
         </button>
-        <button @click="close" class="button" data-icon-right="f">
+        <button class="button" data-icon-right="f" @click="close">
           Allow
         </button>
       </div>
@@ -156,14 +156,14 @@ const hideOnScroll = true
 
 export default Vue.extend({
   components: {
-    CheckboxGroup
+    CheckboxGroup,
   },
   data() {
     return {
       cookieGroups: cookieOptions.cookieGroups,
       hideOnScroll,
       selected: this.$store.state.cookies.enabled,
-      windowTop: 0
+      windowTop: 0,
     }
   },
 
@@ -176,13 +176,13 @@ export default Vue.extend({
         !this.$store.state.cookies.messageShown
       )
     },
-    ...mapState(['cookies'])
+    ...mapState(['cookies']),
   },
   watch: {
     selected(newVal, oldVal) {
       // Save selection as soon as it changes.
       this.$store.commit('cookies/saveSelection', newVal)
-    }
+    },
   },
 
   mounted() {
@@ -230,7 +230,7 @@ export default Vue.extend({
         // tell each checkbox to toggleAll
         x.toggleAll(toggle)
       }
-    }
-  }
+    },
+  },
 })
 </script>

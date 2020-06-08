@@ -1,15 +1,28 @@
 <template>
   <div class="custom-control custom-switch">
     <input
+      v-if="childs"
       :id="namespace + index"
-      @change="toggleAll"
+      v-model="allSelected"
       :indeterminate="indeterminate"
-      v-model="childs ? allSelected : selected"
       :disabled="main.disabled"
       :checked="main.checked"
       :value="index"
       type="checkbox"
       class="custom-control-input"
+      @change="toggleAll"
+    />
+    <input
+      v-else
+      :id="namespace + index"
+      v-model="selected"
+      :indeterminate="indeterminate"
+      :disabled="main.disabled"
+      :checked="main.checked"
+      :value="index"
+      type="checkbox"
+      class="custom-control-input"
+      @change="toggleAll"
     />
     <label :for="namespace + index" class="custom-control-label">
       {{ $store.state.cookies.collapsed ? main.text : main.long_name }}
@@ -26,8 +39,8 @@
         class="custom-control custom-switch child"
       >
         <input
-          v-model="selected"
           :id="namespace + childIndex"
+          v-model="selected"
           :value="childIndex"
           :disabled="child.disabled"
           :checked="child.checked"
@@ -95,24 +108,24 @@ export default Vue.extend({
   props: {
     main: {
       type: Object,
-      required: true
+      required: true,
     },
     description: {
       type: String,
-      default: ''
+      default: '',
     },
     index: {
       type: String,
-      required: true
+      required: true,
     },
     namespace: {
       type: String,
-      default: ''
+      default: '',
     },
     childs: {
       type: Object,
-      default: () => {}
-    }
+      default: () => {},
+    },
   },
   data() {
     return {
@@ -120,7 +133,7 @@ export default Vue.extend({
       childValues: this.childs ? Object.keys(this.childs) : [''],
       selected,
       allSelected: this.main.checked,
-      indeterminate: false
+      indeterminate: false,
     }
   },
   watch: {
@@ -144,7 +157,7 @@ export default Vue.extend({
         this.indeterminate = true
         this.allSelected = false
       }
-    }
+    },
   },
   mounted() {
     // Prefill Selected Items
@@ -177,7 +190,7 @@ export default Vue.extend({
       } else {
         return null
       }
-    }
-  }
+    },
+  },
 })
 </script>

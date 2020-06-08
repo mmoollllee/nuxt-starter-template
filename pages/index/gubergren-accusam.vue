@@ -17,13 +17,13 @@ import Modal from '~/components/partials/Modal.vue'
 
 export default {
   components: {
-    Modal
+    Modal,
   },
   head() {
     return {
-      title: 'Gubergren & Accusam'
+      title: 'Gubergren & Accusam',
     }
   },
-  scrollToTop: false
+  scrollToTop: false,
 }
 </script>
