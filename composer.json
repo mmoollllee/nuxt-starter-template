@@ -1,0 +1,7 @@
+{
+    "require": {
+        "rdoepner/cleverreach": "^1.4",
+        "vlucas/phpdotenv": "^5.0",
+        "phpmailer/phpmailer": "^6.1"
+    }
+}

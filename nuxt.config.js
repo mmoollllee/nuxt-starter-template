@@ -57,6 +57,7 @@ export default {
   },
   css: [
     '@/css/main.scss',
+    'swiper/css/swiper.css',
     {
       src: '@fancyapps/fancybox/src/css/core.css',
       lang: 'css',
@@ -75,6 +76,7 @@ export default {
     '~/plugins/vue-lazysizes.client.js',
     '~/plugins/jquery-fancybox',
     '~/plugins/vuelidate',
+    { src: '~/plugins/vue-awesome-swiper', mode: 'client' },
   ],
   build: {
     analyze: false,
@@ -87,6 +89,7 @@ export default {
       sourceType: 'unambiguous',
     },
     transpile: ['nuxt-vuex-localstorage'],
+    cssSourceMap: true,
   },
   buildModules: ['@nuxtjs/eslint-module', '@nuxt/typescript-build'],
   modules: [
@@ -153,8 +156,8 @@ export default {
   },
   purgeCSS: {
     mode: 'postcss',
-    whitelistPatterns: [/fancybox/, /icon-/],
-    whitelistPatternsChildren: [/fancybox/, /icon-/],
+    whitelistPatterns: [/fancybox/, /icon-/, /swiper/],
+    whitelistPatternsChildren: [/fancybox/, /icon-/, /swiper/],
   },
   optimizedImages: {
     inlineImageLimit: -1,

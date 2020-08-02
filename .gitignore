@@ -86,3 +86,7 @@ sw.*
 
 # Vim swap files
 *.swp
+
+.vscode/sftp.json
+dist
+vendor
