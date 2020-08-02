@@ -57,7 +57,7 @@ export default {
   },
   css: [
     '@/css/main.scss',
-    'swiper/css/swiper.css',
+    'swiper/swiper.scss',
     {
       src: '@fancyapps/fancybox/src/css/core.css',
       lang: 'css',
