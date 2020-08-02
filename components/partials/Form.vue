@@ -253,7 +253,7 @@ export default {
 
       axios({
         method: 'post',
-        url: '/mailer.php',
+        url: '/mailer/mailer.php',
         data: contactFormData,
       })
         .then((response) => {

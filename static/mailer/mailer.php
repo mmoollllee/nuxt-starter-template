@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   // Setup Message Contents
   $name = filter_var(trim($_POST["name"]), FILTER_SANITIZE_STRING);
-  $phone = filter_var(trim($_POST["tel"]), FILTER_SANITIZE_STRING);
+  $phone = filter_var(trim($_POST["phone"]), FILTER_SANITIZE_STRING);
   $company = filter_var(trim($_POST["company"]), FILTER_SANITIZE_STRING);
   $mail = filter_var(trim($_POST["mail"]), FILTER_SANITIZE_EMAIL);
   $honeypot = $_POST['subject'];
@@ -27,8 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $origin = get_message_origin();
   $ip = get_message_ip();
 
-    // Message Content for Anfragen
-    $preislisten = filter_var(trim($_POST["preislisten"]), FILTER_SANITIZE_STRING);
+    // application
+    $application = filter_var(trim($_POST["application"]), FILTER_SANITIZE_STRING);
   
   // Validation
     // Honeypott
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       die($output);
     }
     // Message
-    if (!isset($preislisten) && !isset($message)) {
+    if (!isset($message)) {
       $output = json_encode(
         array(
           'type' => 'error',
@@ -79,29 +79,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       die($output);
     }
   
-  if (isset($preislisten)) {
-    $title = 'Anfrage';
-  } else {
-    $title = 'Nachricht';
-  }
+    if ($application) {
+      $title = 'application';
+    } else {
+      $title = 'Nachricht';
+    }
 
-  // Message Body for Recipient
-  $message_content = "
-    <h2>{$title}</h2>
-    <p>{$message}<br /><br /><br /><br /></p>
-    <hr />" .
-    ($preislisten ? "
-    <h3>Anfrage</h3><p>{$preislisten}<br /><br /></p><hr />" : "") .
-    "<h2>Details</h2>
-    <p>
-    Von: $name $mail<br/>" . 
-    ($phone ? "Telefon: {$phone}<br />" : "") .
-    ($company ? "Firma: {$company}<br />" : "") .
-    ($origin ? "Origin: {$origin}<br />" : "") .
-    ($ip ? "IP-Address: {$ip}" : "") .
-    "</p>";
+ // Message Body for Recipient
+ $message_content = "
+   <h2>{$title}</h2>
+   <p>{$message}<br /><br /><br /><br /></p>
+   <hr />
+   <h2>Details</h2>
+   <p>
+   Von: $name $mail<br/>" . 
+   ($phone ? "Phone: {$phone}<br />" : "") .
+   ($company ? "Company: {$company}<br />" : "") .
+   ($application ? "Application: {$application}<br />" : "") .
+   ($origin ? "Origin: {$origin}<br />" : "") .
+   ($ip ? "IP-Address: {$ip}" : "") .
+   "</p>";
 
-  $subject = "{$title} von {$recipientName}";
+  $subject = "{$title} from {$recipientName}";
 
   $phpmailer = new PHPMailer(true);                              // Passing `true` enables exceptions
   try {
@@ -136,23 +135,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ( $mail ) {
     // Message Body for Sender
     $message_content = "
-      <p>Vielen Dank für Ihre {$title}!<br /><br />
-      Wir werden uns baldmöglichst mit Ihnen in Verbindung setzen.<br /><br />
-      Mit besten Grüßen,<br />
-      {$recipientName}<br /><br /><br /><br /></p>
-      <hr />" .
-      ($message ? "<h2>Ihre {$title}</h2>
-      <p>{$message}<br /><br /><br /><br /></p>
-        <hr />" : "" ) . 
-      (($preislisten || $phone || $company) ? 
-      "<h2>Details</h2>
-      <p>" .
-      ($preislisten ? "Preislisten: {$preislisten}<br />" : "") .
-      ($phone ? "Telefon: {$phone}<br />" : "") .
-      ($company ? "Firma: {$company}<br />" : "") .
-      "</p>" : "" );
+    <p>Hello {$name},<br /><br />
+    Thanks for your {$title}!<br /><br />
+    Kind regards,<br />
+    example.com<br /><br /><br /><br /></p>
+      <hr />
+    <h2>Your {$title}</h2>
+    <p>{$message}<br /><br /><br /><br /></p>
+      <hr />
+    <h2>Details</h2>
+    <p>" .
+    ($phone ? "Phone: {$phone}<br />" : "") .
+    ($application ? "Application: {$application}<br />" : "") .
+    ($company ? "Company: {$company}<br />" : "") .
+    "</p>";
 
-    $subject = "Ihre {$title} an {$recipientName}";
+    $subject = "Your {$title} to {$recipientName}";
 
     $phpmailer = new PHPMailer(true);                              // Passing `true` enables exceptions
     try {
