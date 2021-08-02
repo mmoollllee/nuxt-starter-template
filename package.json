@@ -15,7 +15,7 @@
     "start": "nuxt start --modern=client",
     "generate": "nuxt generate --modern=client",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "icons": "icon-font-generator assets/icons/*.svg --codepoints config/codepoints.json --normalize --center -o static/fonts  --name icon-font --csstp helpers/icon-font-template.hbs --csspath css/_icons.scss --jsonpath helpers/icons.json --html false --fontspath /fonts/ --height 1000",
+    "icons": "fantasticon -c config/fantasticonrc.js",
     "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
   },
   "dependencies": {
@@ -51,7 +51,7 @@
     "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-nuxt": "^1.0.0",
-    "icon-font-generator": "github:Hammie/icon-font-generator",
+    "fantasticon": "^1.2.2",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^9.0.0",

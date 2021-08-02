@@ -5,7 +5,7 @@
       <li v-for="(value, key) in icons" :key="key">
         <i :class="`icon-${key}`"></i>
         <span class="mx-2 font-bold">
-          {{ String.fromCharCode(parseInt('0x' + value.split('\\')[1])) }}
+          {{ String.fromCharCode(parseInt(value)) }}
         </span>
         <span>{{ key }}</span>
       </li>

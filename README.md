@@ -9,7 +9,7 @@
 - [Automatic Sitemap Generation](https://github.com/nuxt-community/sitemap-module)
 - [Bootstrap](https://github.com/twbs/bootstrap)
 - [Countup.js](https://github.com/inorganik/countUp.js)
-- [Icon Font Generator](https://github.com/Hammie/icon-font-generator)
+- [Fantasticon](https://github.com/tancredi/fantasticon)
 - [Mail Spam Protection](https://github.com/mmoollllee/nuxt-protected-mailto)
 - PHP Contact Form
 - [PurgeCSS](https://github.com/Developmint/nuxt-purgecss)
@@ -66,12 +66,12 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 ### Contact Form
 - Change Message Body, Field names and email address in `static/mailer.php`
 
-### [Icon-font-generator](https://github.com/Hammie/icon-font-generator)
+### [Fontasticon](https://github.com/tancredi/fantasticon)
 - Generates Icon Font from `assets/icons/*.svg` to `static/fonts/icon-font.*`.
-- Uses `config/codepoints.json` to map unicode characters for the font.
+- Uses `config/fontasticon.js` to map decimal unicode characters for the font.
 - Generates CSS Classes for different icons to `css/_icons.scss` from template placed in `helpers/icon-font-template.hbs`
 - Generates list of Icons to `helpers/icons.json`. Used in `icons.vue` page to show all icons.
-See `package.json` scripts key for options.
+See `package.json` scripts key and `config/fontasticon.js` for options.
 
 ``` bash
 npm run icons
