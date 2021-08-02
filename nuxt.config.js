@@ -102,7 +102,6 @@ export default {
     ],
     '@aceforth/nuxt-optimized-images',
     '@nuxtjs/svg',
-    'nuxt-purgecss',
     'nuxt-webfontloader',
     '@nuxtjs/sitemap',
     '@nuxtjs/manifest',
@@ -147,11 +146,6 @@ export default {
       },
       classes: false,
     },
-  },
-  purgeCSS: {
-    mode: 'postcss',
-    whitelistPatterns: [/icon-/],
-    whitelistPatternsChildren: [/icon-/],
   },
   optimizedImages: {
     inlineImageLimit: -1,

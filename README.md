@@ -12,7 +12,7 @@
 - [Fantasticon](https://github.com/tancredi/fantasticon)
 - [Mail Spam Protection](https://github.com/mmoollllee/nuxt-protected-mailto)
 - PHP Contact Form
-- [PurgeCSS](https://github.com/Developmint/nuxt-purgecss)
+- ~~[PurgeCSS](https://github.com/Developmint/nuxt-purgecss)~~
 - Responsive Slideout Menu
 - Good Lighthouse Audit ( Performance __90+__, Accessibility __100__, Best Practices __100__, SEO __100__)
 - [Opt-In Cookie Banner](https://github.com/mmoollllee/nuxt-privacy-message)
