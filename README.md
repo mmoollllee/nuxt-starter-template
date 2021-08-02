@@ -4,7 +4,7 @@
 
 ## Features & Ready set up Built in
 - Responsive Images via [NUXT Optimized Images](https://github.com/aceforth/nuxt-optimized-images)
-- [Fancyapps Fancybox](https://github.com/fancyapps/fancybox) Gallery (Check [Fancybox Licences](https://fancyapps.com/fancybox/3/#license) if you want to use this commercialy)
+- [Fancyapps UI](https://github.com/fancyapps/ui) (Licence needed)
 - [Manifest](https://www.npmjs.com/package/@nuxtjs/manifest) & [Favicon Icon Generation](https://github.com/pimlie/nuxt-rfg-icon)
 - [Automatic Sitemap Generation](https://github.com/nuxt-community/sitemap-module)
 - [Bootstrap](https://github.com/twbs/bootstrap)
@@ -83,7 +83,6 @@ npm run icons
 - see `privacy.vue` for related privacy informations
 
 ## ToDo
-- Replace Fancybox with https://fancyapps.com/next/ and drop jQuery
 - Cookie Message as extra component: [Work in progress. Help wanted!](https://github.com/mmoollllee/nuxt-privacy-message-example)
 
 # Credits

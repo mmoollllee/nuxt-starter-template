@@ -11,6 +11,7 @@
         v-bind="image"
         :href="require('~/assets/' + image + '?size=2000')"
         class="col-6 col-sm-4 col-m-3"
+        data-fancybox="gallery"
       >
         <ImageSet :src="image" sizes="thumbnail" class="thumbnail" />
       </a>

@@ -57,13 +57,8 @@ export default {
   },
   css: [
     '@/css/main.scss',
-    'swiper/swiper.scss',
     {
-      src: '@fancyapps/fancybox/src/css/core.css',
-      lang: 'css',
-    },
-    {
-      src: '@fancyapps/fancybox/src/css/thumbs.css',
+      src: '@fancyapps/ui/dist/fancybox.css',
       lang: 'css',
     },
   ],
@@ -74,9 +69,8 @@ export default {
   },
   plugins: [
     '~/plugins/vue-lazysizes.client.js',
-    '~/plugins/jquery-fancybox',
     '~/plugins/vuelidate',
-    { src: '~/plugins/vue-awesome-swiper', mode: 'client' },
+    '~/plugins/fancyapps-ui.js',
   ],
   build: {
     analyze: false,
@@ -156,8 +150,8 @@ export default {
   },
   purgeCSS: {
     mode: 'postcss',
-    whitelistPatterns: [/fancybox/, /icon-/, /swiper/],
-    whitelistPatternsChildren: [/fancybox/, /icon-/, /swiper/],
+    whitelistPatterns: [/icon-/],
+    whitelistPatternsChildren: [/icon-/],
   },
   optimizedImages: {
     inlineImageLimit: -1,
