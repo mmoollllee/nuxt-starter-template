@@ -16,7 +16,8 @@
     "generate": "nuxt generate --modern=client",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "icons": "fantasticon -c config/fantasticonrc.js",
-    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate"
+    "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "@fancyapps/ui": "^4.0.0-alpha.4",
