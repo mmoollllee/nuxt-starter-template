@@ -88,5 +88,4 @@ sw.*
 *.swp
 
 .vscode/sftp.json
-dist
 vendor
