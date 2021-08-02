@@ -135,7 +135,7 @@ export default {
           title1: 'Lorem &',
           title: 'Ipsum',
           className:
-            'style-5 ml-auto col-12 col-s-6 col-sm-5 ml-sm-0 col-m-4 col-xl-3',
+            'style-5 ms-auto col-12 col-s-6 col-sm-5 ms-sm-0 col-m-4 col-xl-3',
         },
       ],
     }

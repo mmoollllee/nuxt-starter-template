@@ -10,7 +10,7 @@
           :key="item.index"
           :href="item.path"
           :text="item.text"
-          class="ml-2"
+          class="ms-2"
         />
         <MenuItem
           v-for="item in menuSocial"
@@ -19,7 +19,7 @@
           :text="item.text"
           :icon="item.icon"
           target="_blank"
-          class="ml-2"
+          class="ms-2"
         />
       </ul>
     </nav>
