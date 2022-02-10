@@ -58,7 +58,7 @@
     "imagemin-pngquant": "^9.0.0",
     "imagemin-svgo": "^8.0.0",
     "lqip-loader": "^2.2.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nuxt-webfontloader": "^1.1.0",
     "prettier": "^2.0.5",
     "responsive-loader": "^2.0.0",
