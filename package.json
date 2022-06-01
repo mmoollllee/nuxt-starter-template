@@ -63,7 +63,7 @@
     "prettier": "^2.0.5",
     "responsive-loader": "^2.0.0",
     "sass-loader": "^9.0.2",
-    "sharp": "^0.25.4",
+    "sharp": "^0.30.5",
     "webp-loader": "^0.6.0",
     "webpack-bundle-analyzer": "^3.8.0"
   }
